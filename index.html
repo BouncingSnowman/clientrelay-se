@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZMSY0GHTK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6ZMSY0GHTK');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClientRelay - AI-chatbotar för dina kunder</title>
+    <meta name="description" content="Bygg, hantera eller sälj vidare AI-chatbotar från en hubb. Lansera varumärkesanpassade chatbotar för kunder, kampanjer eller din egen verksamhet. Ingen kod behövs.">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://clientrelay.tech/assets/logo-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://clientrelay.tech/assets/logo-icon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="https://clientrelay.tech/assets/logo-icon.png">
+    <link rel="canonical" href="https://clientrelay.se/">
+
+    <!-- Hreflang for multilingual -->
+    <link rel="alternate" hreflang="en" href="https://clientrelay.tech/">
+    <link rel="alternate" hreflang="nb" href="https://clientrelay.no/">
+    <link rel="alternate" hreflang="sv" href="https://clientrelay.se/">
+    <link rel="alternate" hreflang="x-default" href="https://clientrelay.tech/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clientrelay.se/">
+    <meta property="og:title" content="ClientRelay - AI-chatbotar för dina kunder">
+    <meta property="og:description" content="Bygg, hantera eller sälj vidare AI-chatbotar från en hubb. Lansera varumärkesanpassade chatbotar för kunder, kampanjer eller din egen verksamhet. Ingen kod behövs.">
+    <meta property="og:image" content="https://clientrelay.tech/assets/og-image.png">
+    <meta property="og:site_name" content="ClientRelay">
+    <meta property="og:locale" content="sv_SE">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="nb_NO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ClientRelay - AI-chatbotar för dina kunder">
+    <meta name="twitter:description" content="Bygg, hantera eller sälj vidare AI-chatbotar från en hubb. Lansera varumärkesanpassade chatbotar för kunder eller din egen verksamhet.">
+    <meta name="twitter:image" content="https://clientrelay.tech/assets/og-image.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ClientRelay",
+      "url": "https://clientrelay.tech",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Multi-tenant AI chatbot platform for agencies and digital partners. Deploy AI assistants for every client from one hub with custom branding, lead capture, and analytics.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "2 active clients, 50 credits/month"
+        },
+        {
+          "@type": "Offer",
+          "name": "Starter",
+          "price": "67",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          },
+          "description": "Up to 3 active clients, 2000 credits/month"
+        },
+        {
+          "@type": "Offer",
+          "name": "Studio",
+          "price": "179",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          },
+          "description": "Up to 10 active clients, 15000 credits/month, custom branding"
+        },
+        {
+          "@type": "Offer",
+          "name": "Agency",
+          "price": "399",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          },
+          "description": "Up to 25 active clients, advanced AI models, team access"
+        },
+        {
+          "@type": "Offer",
+          "name": "Scale",
+          "price": "899",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          },
+          "description": "Up to 100 active clients, premium AI models"
+        }
+      ],
+      "provider": {
+        "@type": "Organization",
+        "name": "ClientRelay",
+        "url": "https://clientrelay.tech",
+        "logo": "https://clientrelay.tech/assets/logo-icon.png"
+      },
+      "featureList": [
+        "Multi-client AI chatbot management",
+        "Custom branding per client",
+        "AI-powered lead capture",
+        "White-label widget with Shadow DOM",
+        "No-code deployment",
+        "Chat analytics and logs",
+        "AI marketing consultant",
+        "AI prompt consultant",
+        "Hub-scoped security with RLS",
+        "Team member access"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Start an AI assistant in 2 minutes",
+      "description": "Watch how to create and deploy a fully working AI chatbot for a client in under 2 minutes using ClientRelay.",
+      "thumbnailUrl": "https://img.youtube.com/vi/U_8E_cEiTY8/maxresdefault.jpg",
+      "uploadDate": "2026-05-06",
+      "contentUrl": "https://www.youtube.com/watch?v=U_8E_cEiTY8",
+      "embedUrl": "https://www.youtube.com/embed/U_8E_cEiTY8",
+      "publisher": {
+        "@type": "Organization",
+        "name": "ClientRelay",
+        "url": "https://clientrelay.tech"
+      }
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --accent: #06b6d4;
+            --bg: #0a2247;
+            --bg-card: rgba(10, 18, 40, 0.65);
+            --bg-card-hover: rgba(16, 28, 55, 0.75);
+            --text: #e4e4e7;
+            --text-muted: #9ca3af;
+            --border: rgba(255,255,255,0.06);
+            --glow: rgba(14,165,233,0.15);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ── Wave canvas ── */
+        #waveCanvas {
+            position: fixed; top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            z-index: 0; pointer-events: none;
+        }
+
+        /* ── Nav ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 16px 32px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: rgba(10,34,71,0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-brand {
+            font-size: 1.2rem; font-weight: 700; color: #fff;
+            text-decoration: none; display: flex; align-items: center; gap: 8px;
+        }
+        .nav-brand img { height: 38px; width: auto; }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            font-size: 0.85rem; color: var(--text-muted); text-decoration: none;
+            font-weight: 500; transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #fff; }
+        .nav-cta {
+            padding: 8px 20px; border-radius: 8px; background: var(--primary);
+            color: #fff !important; font-weight: 600; font-size: 0.82rem;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+        /* ── Hero ── */
+        .hero {
+            position: relative; z-index: 1;
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 120px 24px 80px;
+        }
+        .hero-inner { max-width: 780px; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 16px; border-radius: 24px;
+            font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1.5px; color: var(--accent);
+            border: 1px solid rgba(6,182,212,0.25);
+            background: rgba(6,182,212,0.06);
+            margin-bottom: 32px;
+            animation: fadeUp 0.6s ease;
+        }
+        .hero-badge .dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--accent);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%,100% { opacity: 1; } 50% { opacity: 0.3; }
+        }
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 800; line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 20%, var(--primary) 80%, var(--accent) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: fadeUp 0.7s ease 0.1s both;
+        }
+        .hero-sub {
+            font-size: 1.15rem; color: #9cb8d4;
+            line-height: 1.8; margin-bottom: 40px;
+            animation: fadeUp 0.7s ease 0.2s both;
+        }
+        .hero-actions {
+            display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+            animation: fadeUp 0.7s ease 0.3s both;
+        }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; border-radius: 12px; background: var(--primary);
+            color: #fff; font-weight: 600; font-size: 0.92rem;
+            text-decoration: none; transition: all 0.2s; border: none; cursor: pointer;
+        }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 32px var(--glow); }
+        .btn-ghost {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; border-radius: 12px;
+            background: rgba(10, 20, 45, 0.6); border: 1px solid rgba(255,255,255,0.18);
+            color: rgba(255,255,255,0.85); font-weight: 500; font-size: 0.92rem;
+            text-decoration: none; transition: all 0.2s; cursor: pointer;
+            backdrop-filter: blur(12px);
+        }
+        .btn-ghost:hover { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.06); }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Sections ── */
+        section { position: relative; z-index: 1; padding: 100px 24px; }
+        .section-inner { max-width: 1080px; margin: 0 auto; }
+        .section-label {
+            display: inline-block; font-size: 0.7rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 2px;
+            color: var(--primary); margin-bottom: 12px;
+        }
+        h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700; margin-bottom: 16px; color: #fff;
+        }
+        .section-sub { font-size: 1rem; color: var(--text-muted); line-height: 1.7; max-width: 560px; margin-bottom: 48px; }
+
+        /* ── How It Works ── */
+        .steps {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .step {
+            background: var(--bg-card); border-radius: 16px;
+            padding: 32px 28px; border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .step:hover { background: var(--bg-card-hover); border-color: rgba(14,165,233,0.12); transform: translateY(-4px); }
+        .step-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 10px;
+            background: rgba(14,165,233,0.1); color: var(--primary);
+            font-weight: 700; font-size: 0.9rem; margin-bottom: 16px;
+        }
+        .step h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; color: #fff; }
+        .step p { font-size: 0.88rem; color: #8fa8c4; line-height: 1.6; }
+
+        /* ── Features Grid ── */
+        .features {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 20px;
+        }
+        .feature {
+            background: var(--bg-card); border-radius: 16px;
+            padding: 28px 24px; border: 1px solid var(--border);
+            transition: all 0.3s; flex: 0 1 calc(33.333% - 14px); min-width: 280px;
+        }
+        .feature:hover { background: var(--bg-card-hover); border-color: rgba(14,165,233,0.12); }
+        .feature-icon {
+            width: 44px; height: 44px; border-radius: 12px;
+            background: rgba(14,165,233,0.08); display: flex;
+            align-items: center; justify-content: center;
+            margin-bottom: 16px; color: var(--primary);
+        }
+        .feature-icon svg { width: 22px; height: 22px; stroke: var(--primary); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        .feature h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; color: #fff; }
+        .feature p { font-size: 0.85rem; color: #8fa8c4; line-height: 1.6; }
+
+        /* ── Reseller Business ── */
+        .reseller-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .reseller-card {
+            background: var(--bg-card); border-radius: 16px;
+            padding: 28px 24px; border: 1px solid rgba(74,222,128,0.12);
+            transition: all 0.3s;
+        }
+        .reseller-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(74,222,128,0.25);
+            transform: translateY(-4px);
+        }
+        .reseller-icon {
+            width: 44px; height: 44px; border-radius: 12px;
+            background: rgba(74,222,128,0.08); display: flex;
+            align-items: center; justify-content: center;
+            margin-bottom: 16px;
+        }
+        .reseller-icon svg { width: 22px; height: 22px; stroke: #4ade80; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        .reseller-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; color: #4ade80; }
+        .reseller-card p { font-size: 0.85rem; color: #8fa8c4; line-height: 1.6; }
+
+        /* ── Pricing ── */
+        .pricing-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .price-card {
+            background: var(--bg-card); border-radius: 16px;
+            padding: 32px 28px; border: 1px solid var(--border);
+            transition: all 0.3s; position: relative;
+        }
+        .price-card.featured {
+            border-color: rgba(14,165,233,0.2);
+            background: linear-gradient(180deg, rgba(14,165,233,0.04), var(--bg-card));
+        }
+        .price-card:hover { transform: translateY(-4px); }
+        .price-tier { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); margin-bottom: 8px; }
+        .price-amount { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 4px; }
+        .price-amount span { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); }
+        .price-desc { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+        .price-features { list-style: none; padding: 0; }
+        .price-features li {
+            padding: 8px 0; font-size: 0.84rem; color: var(--text-muted);
+            display: flex; align-items: center; gap: 10px;
+            border-top: 1px solid var(--border);
+        }
+        .price-features li::before { content: "✓"; color: var(--primary); font-weight: 700; }
+        .price-tag {
+            position: absolute; top: -10px; right: 20px;
+            padding: 4px 14px; border-radius: 12px;
+            background: var(--primary); color: #fff;
+            font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Dogfood ── */
+        .dogfood {
+            background: linear-gradient(135deg, rgba(14,165,233,0.04), rgba(6,182,212,0.04));
+            border: 1px solid var(--border); border-radius: 20px;
+            padding: 48px 32px; text-align: center; margin-top: 80px;
+        }
+        .dogfood h3 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+        .dogfood p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; max-width: 500px; margin: 0 auto 24px; }
+        .dogfood-labels {
+            display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+        }
+        .dogfood-label {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 10px;
+            background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.15);
+            font-size: 0.78rem; font-weight: 500; color: var(--accent);
+        }
+
+        /* ── Footer ── */
+        footer {
+            position: relative; z-index: 1;
+            text-align: center; padding: 48px 24px;
+            border-top: 1px solid var(--border);
+        }
+        footer p { font-size: 0.75rem; color: #4b5563; }
+        footer a { color: var(--text-muted); text-decoration: none; }
+        footer a:hover { color: #fff; }
+
+        /* ── Lang Switcher ── */
+        .lang-switch { display: flex; gap: 2px; align-items: center; margin-left: 8px; }
+        .lang-switch button {
+            background: none; border: 1px solid transparent; border-radius: 6px;
+            cursor: pointer; font-size: 0.72rem; font-weight: 600; font-family: 'Inter', sans-serif;
+            padding: 4px 8px; color: var(--text-muted);
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+            letter-spacing: 0.5px; text-transform: uppercase;
+        }
+        .lang-switch button:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .lang-switch button.active { color: #fff; border-color: rgba(14,165,233,0.4); background: rgba(14,165,233,0.1); }
+
+        /* ── Video Demo ── */
+        .demo-video {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+            aspect-ratio: 16/9;
+        }
+        .demo-video iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: 0;
+        }
+
+        /* ── Responsive ── */
+        html { overflow-x: hidden; }
+
+        @media (max-width: 768px) {
+            nav { padding: 12px 16px; }
+            .nav-links { gap: 12px; }
+            .nav-links a:not(.nav-cta) { display: none; }
+            .nav-cta { padding: 7px 14px; font-size: 0.78rem; }
+            .hero { padding: 100px 20px 60px; }
+            section { padding: 60px 20px; }
+            .dogfood { padding: 32px 20px; }
+            .features { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+
+        @media (max-width: 480px) {
+            nav { padding: 10px 14px; }
+            .nav-brand { font-size: 1rem; gap: 6px; }
+            .nav-brand svg { width: 24px; height: 24px; }
+            .nav-cta { padding: 6px 12px; font-size: 0.75rem; }
+
+            .hero { padding: 90px 16px 48px; min-height: auto; }
+            .hero-badge { font-size: 0.65rem; padding: 5px 12px; margin-bottom: 24px; }
+            h1 { font-size: 1.75rem; margin-bottom: 16px; }
+            .hero-sub { font-size: 0.95rem; line-height: 1.65; margin-bottom: 28px; }
+            .hero-actions { flex-direction: column; align-items: center; gap: 12px; }
+            .btn-primary, .btn-ghost { width: 100%; max-width: 280px; justify-content: center; padding: 13px 24px; font-size: 0.88rem; }
+
+            section { padding: 48px 16px; }
+            .section-sub { font-size: 0.9rem; }
+            h2 { font-size: 1.35rem; }
+
+            .steps { grid-template-columns: 1fr; gap: 16px; }
+            .step { padding: 24px 20px; }
+            .step h3 { font-size: 0.95rem; }
+            .step p { font-size: 0.82rem; }
+
+            .features { grid-template-columns: 1fr; gap: 14px; }
+            .feature { padding: 22px 18px; }
+            .feature h3 { font-size: 0.9rem; }
+            .feature p { font-size: 0.82rem; }
+
+            .pricing-grid { grid-template-columns: 1fr !important; gap: 16px; }
+            .price-card { padding: 24px 20px; }
+            .price-amount { font-size: 1.6rem; }
+            .price-desc { font-size: 0.8rem; }
+            .price-features li { font-size: 0.8rem; }
+
+            .dogfood { padding: 28px 16px; margin-top: 48px; border-radius: 14px; }
+            .dogfood h3 { font-size: 1.15rem; }
+            .dogfood p { font-size: 0.85rem; }
+            .dogfood-labels { flex-direction: column; align-items: center; }
+            .dogfood-label { font-size: 0.72rem; }
+
+            footer { padding: 32px 16px; }
+            footer p { font-size: 0.7rem; }
+
+            .chat-bubbles { display: none; }
+        }
+
+        /* ── Floating Chat Bubbles ── */
+        .chat-bubbles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .chat-bubble {
+            position: absolute;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            border-radius: 20px;
+            background: rgba(14, 165, 233, 0.04);
+            border: 1px solid rgba(14, 165, 233, 0.08);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.20);
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 2.5s ease, transform 2.5s ease;
+            will-change: opacity, transform;
+        }
+        .chat-bubble.visible {
+            opacity: 1;
+            transform: translateY(-6px);
+        }
+        .chat-bubble .bubble-avatar {
+            width: 24px; height: 24px;
+            border-radius: 50%;
+            background: rgba(14, 165, 233, 0.12);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .chat-bubble .bubble-avatar svg {
+            width: 14px; height: 14px;
+            stroke: var(--primary); fill: none;
+            stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .chat-bubble { transition: none; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="waveCanvas"></canvas>
+
+    <!-- Nav -->
+    <nav>
+        <a href="/" class="nav-brand">
+            <img src="https://clientrelay.tech/app/logo.png" alt="ClientRelay" height="38">
+        </a>
+        <div class="nav-links">
+            <a href="#how-it-works" data-i18n="nav_how">How it works</a>
+            <a href="#features" data-i18n="nav_features">Features</a>
+            <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+            <div class="lang-switch" id="langSwitch">
+                <a href="https://clientrelay.tech/" title="English" style="font-size:0.72rem;font-weight:600;padding:4px 8px;color:var(--text-muted);text-decoration:none;letter-spacing:0.5px">EN</a>
+                <a href="https://clientrelay.no/" title="Norsk" style="font-size:0.72rem;font-weight:600;padding:4px 8px;color:var(--text-muted);text-decoration:none;letter-spacing:0.5px">NO</a>
+                <span style="font-size:0.72rem;font-weight:600;padding:4px 8px;color:#fff;border:1px solid rgba(14,165,233,0.4);background:rgba(14,165,233,0.1);border-radius:6px;letter-spacing:0.5px">SE</span>
+            </div>
+            <a href="https://clientrelay.tech/app/" class="nav-cta" data-i18n="nav_cta">Dashboard →</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <!-- Floating chat bubbles -->
+        <div class="chat-bubbles" id="chatBubbles"></div>
+        <div class="hero-inner">
+            <h1 data-i18n="hero_title">Build, manage, or resell AI chatbots from one hub.</h1>
+            <p class="hero-sub" data-i18n="hero_sub">Launch branded AI chatbots for clients, campaigns, departments, or your own business. Paste a website URL, go live in seconds, capture leads, and track performance — no code needed.</p>
+            <div class="hero-actions">
+                <a href="https://clientrelay.tech/app/" class="btn-primary" data-i18n="hero_cta">Start free →</a>
+                <a href="#how-it-works" class="btn-ghost" data-i18n="hero_ghost">See how it works</a>
+            </div>
+            <a href="https://clientrelay.tech/hub/?hub=spektrum-hub" style="display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:10px 20px;border-radius:12px;background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.2);color:#38bdf8;font-size:0.88rem;font-weight:500;text-decoration:none;transition:all 0.2s;animation:fadeUp 0.7s ease 0.4s both" onmouseover="this.style.borderColor='rgba(14,165,233,0.4)';this.style.background='rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='rgba(14,165,233,0.2)';this.style.background='rgba(14,165,233,0.08)'">
+                <span data-i18n="hero_client_link">Only need one standalone chatbot? Get started through our partner Spektrum →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Tagline -->
+    <section style="padding:48px 24px 0;text-align:center">
+        <div class="section-inner" style="max-width:720px">
+            <p style="font-size:clamp(1.15rem,2.5vw,1.5rem);font-weight:700;color:#fff;letter-spacing:-0.3px;line-height:1.4;margin-bottom:16px;animation:fadeUp 0.7s ease 0.4s both" data-i18n="tagline">Fast to launch. Smarter with use. Faster over time.</p>
+            <p style="font-size:0.92rem;color:#8fa8c4;line-height:1.7;max-width:600px;margin:0 auto;animation:fadeUp 0.7s ease 0.5s both" data-i18n="tagline_sub">ClientRelay combines on-demand retrieval with progressive caching. It starts fast, fetches the right information when needed, and learns which pages matter most over time.</p>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+        <div class="section-inner">
+            <span class="section-label" data-i18n="how_label">How it works</span>
+            <h2 data-i18n="how_title">Live in 30 seconds. Customized in 15 minutes.</h2>
+            <p class="section-sub" data-i18n="how_sub">From signup to a working AI chatbot on your client's website. No code. No API keys. No configuration nightmare.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h3 data-i18n="step1_title">Create your hub</h3>
+                    <p data-i18n="step1_desc">Sign in with Google. Your hub is created automatically. You're the owner - add team members later if you want.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3 data-i18n="step2_title">Add a client</h3>
+                    <p data-i18n="step2_desc">Give it a name and paste the website URL. The AI crawls the site and learns the business automatically. Each client gets its own AI brain.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3 data-i18n="step3_title">Embed & launch</h3>
+                    <p data-i18n="step3_desc">Copy one script tag. Paste it on your client's site. The chatbot is live - with custom branding, lead capture, and analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Video -->
+    <section id="demo" style="padding-top:40px">
+        <div class="section-inner" style="text-align:center">
+            <span class="section-label" data-i18n="demo_label">See it in action</span>
+            <h2 data-i18n="demo_title">From zero to live chatbot in 2 minutes</h2>
+            <p class="section-sub" style="margin-left:auto;margin-right:auto" data-i18n="demo_sub">Watch a real setup from start to finish. No editing, no tricks - just the actual product.</p>
+            <div class="demo-video">
+                <iframe src="https://www.youtube.com/embed/U_8E_cEiTY8" title="ClientRelay Demo - AI chatbot setup in 2 minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Customer Showcase -->
+    <section style="padding:60px 24px">
+        <div class="section-inner" style="text-align:center">
+            <span class="section-label" data-i18n="showcase_label">Live on a real customer site</span>
+            <h2 data-i18n="showcase_title">See it working in production</h2>
+            <p class="section-sub" style="margin-left:auto;margin-right:auto" data-i18n="showcase_desc">Spektrum Profil AS uses a ClientRelay chatbot to help visitors navigate their product catalog, answer questions about printing methods, and guide purchasing decisions — 24/7, in Norwegian.</p>
+            <p style="margin:12px auto 0;font-size:0.95rem;color:#38bdf8;font-weight:600;letter-spacing:0.3px" data-i18n="showcase_stat">After 2 minutes, this one was ready to answer questions from 29,000 pages.</p>
+            <a href="https://www.gosh-spektrum.no/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;padding:16px 32px;border-radius:14px;background:linear-gradient(135deg,rgba(14,165,233,0.1),rgba(6,182,212,0.08));border:1px solid rgba(14,165,233,0.25);color:#fff;text-decoration:none;font-size:0.95rem;font-weight:600;transition:all 0.3s;letter-spacing:0.2px;margin-top:8px" onmouseover="this.style.background='linear-gradient(135deg,rgba(14,165,233,0.2),rgba(6,182,212,0.15))';this.style.borderColor='rgba(14,165,233,0.5)';this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(14,165,233,0.15)'" onmouseout="this.style.background='linear-gradient(135deg,rgba(14,165,233,0.1),rgba(6,182,212,0.08))';this.style.borderColor='rgba(14,165,233,0.25)';this.style.transform='none';this.style.boxShadow='none'">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span data-i18n="showcase_cta">Visit Spektrum Profil AS — gosh-spektrum.no</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+        <div class="section-inner">
+            <span class="section-label" data-i18n="feat_label">Built for agencies</span>
+            <h2 data-i18n="feat_title">Everything you need, nothing you don't</h2>
+            <p class="section-sub" data-i18n="feat_sub">A focused platform that does multi-client AI right - without the enterprise bloat.</p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+                    <h3 data-i18n="f1_t">Multi-client from day one</h3>
+                    <p data-i18n="f1_d">Every account is a hub. Start with one client, scale to a hundred. Same architecture, no migration.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"/></svg></div>
+                    <h3 data-i18n="f2_t">Separate knowledge per client</h3>
+                    <p data-i18n="f2_d">Each client has its own knowledge base, persona, and system prompt. No cross-contamination.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+                    <h3 data-i18n="f3_t">White-label widget</h3>
+                    <p data-i18n="f3_d">Custom colors, names, greetings, and suggestions per client. It looks like theirs, not yours.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                    <h3 data-i18n="f4_t">Lead capture & analytics</h3>
+                    <p data-i18n="f4_d">AI-triggered lead forms collect contact info naturally. See chat logs and leads per client.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <h3 data-i18n="f5_t">Hub-scoped security</h3>
+                    <p data-i18n="f5_d">Row-level security ensures each hub only sees its own clients. Superhub oversight for platform admins.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                    <h3 data-i18n="f6_t">No-code deployment</h3>
+                    <p data-i18n="f6_d">One script tag per client. Shadow DOM isolation means zero CSS conflicts. Just paste and go.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                    <h3 data-i18n="f7_t">AI marketing consultant - included</h3>
+                    <p data-i18n="f7_d">Your clients' chatbot already knows their business. It gives SEO advice, content suggestions, and marketing guidance - no extra cost.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2l1.09 3.26L16 6l-2.18 1.74L14.55 11 12 9.27 9.45 11l.73-3.26L8 6l2.91-.74z"/><path d="M5 16l1.09 3.26L9 20l-2.18 1.74.73 3.26L5 22.27 2.45 25l.73-3.26L1 20l2.91-.74z" opacity=".5"/><path d="M19 8l1.09 3.26L23 12l-2.18 1.74.73 3.26L19 14.27 16.45 17l.73-3.26L15 12l2.91-.74z" opacity=".5"/></svg></div>
+                    <h3 data-i18n="f8_t">AI prompting consultant - included</h3>
+                    <p data-i18n="f8_d">Not sure how to set up a chatbot persona? The AI writes its own system prompt. Just describe the business - it handles the rest.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M18 8a3 3 0 0 1 0 6"/><path d="M6 8a3 3 0 0 0 0 6"/><rect x="7" y="5" width="10" height="12" rx="2"/><path d="M12 17v3"/><path d="M8 22h8"/></svg></div>
+                    <h3 data-i18n="f9_t">Human Assist - live handoff</h3>
+                    <p data-i18n="f9_d">When the AI can't help, visitors tap one button and connect to a real person. Operators manage live chats from a mobile-friendly app - no extra software needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseller Business -->
+    <section id="reseller" style="padding:80px 24px">
+        <div class="section-inner">
+            <span class="section-label" data-i18n="reseller_label">Build a business</span>
+            <h2 data-i18n="reseller_title">Turn AI chatbots into recurring revenue</h2>
+            <p class="section-sub" data-i18n="reseller_sub">You don't just deploy chatbots — you sell them. ClientRelay gives you the tools to build a real AI services business.</p>
+            <div class="reseller-grid">
+                <div class="reseller-card">
+                    <div class="reseller-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                    <h3 data-i18n="r1_t">Set your own prices</h3>
+                    <p data-i18n="r1_d">Define custom pricing tiers on your promo page. You decide what to charge your clients — we handle the platform.</p>
+                </div>
+                <div class="reseller-card">
+                    <div class="reseller-icon"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+                    <h3 data-i18n="r2_t">Your own promo page</h3>
+                    <p data-i18n="r2_d">Every hub gets a branded promo page with your tagline, pricing tiers, and a direct signup link. Share it with leads — they come to you.</p>
+                </div>
+                <div class="reseller-card">
+                    <div class="reseller-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <h3 data-i18n="r3_t">Invite & onboard clients</h3>
+                    <p data-i18n="r3_d">Send invite links, manage pending signups, and onboard clients with their own branded chatbots — all from your hub dashboard.</p>
+                </div>
+                <div class="reseller-card">
+                    <div class="reseller-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                    <h3 data-i18n="r4_t">Full visibility</h3>
+                    <p data-i18n="r4_d">See every client's chat logs, leads, and usage. Know exactly what's working and what to optimize — without asking them.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:40px">
+                <a href="https://clientrelay.tech/app/" class="btn-primary" data-i18n="reseller_cta">Start your hub free →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing">
+        <div class="section-inner">
+            <span class="section-label" data-i18n="price_label">Simple pricing</span>
+            <h2 data-i18n="price_title">Scale at your pace</h2>
+            <p class="section-sub" data-i18n="price_sub">Choose a plan based on how many active clients you need. Credits are included in every plan. No surprises.</p>
+            <div class="pricing-grid" style="grid-template-columns:repeat(5,1fr)">
+                <div class="price-card" data-tier="free">
+                    <div class="price-tier">Free</div>
+                    <div class="price-amount" data-i18n="p0_price">0 <span>EUR / month</span></div>
+                    <p class="price-desc" data-i18n="p0_desc">Try it out. No credit card needed. Create your hub and deploy your first chatbot today.</p>
+                    <ul class="price-features">
+                        <li data-i18n="p0_f1">2 active clients</li>
+                        <li data-i18n="p0_f2">50 credits / month</li>
+                        <li data-i18n="p_model_fast">Fast AI model</li>
+                        <li data-i18n="p_leads">Lead capture</li>
+                        <li data-i18n="p0_inactive" style="font-size:0.78rem;color:#6b7280;border-top-color:transparent">Inactive bots removed after 14 days</li>
+                    </ul>
+                </div>
+                <div class="price-card" data-tier="starter">
+                    <div class="price-tier">Starter</div>
+                    <div class="price-amount" data-i18n="p1_price">67 <span>EUR / month</span></div>
+                    <p class="price-desc" data-i18n="p_starter_desc">For solo freelancers getting their first clients onboard.</p>
+                    <ul class="price-features">
+                        <li data-i18n="p_starter_f1">Up to 3 active clients</li>
+                        <li data-i18n="p_starter_msgs">2,000 credits / month</li>
+                        <li data-i18n="p_model_fast">Fast AI model</li>
+                        <li data-i18n="p_leads">Lead capture</li>
+                        <li data-i18n="p_human_assist">Human Assist - live handoff</li>
+                    </ul>
+                </div>
+                <div class="price-card featured" data-tier="studio">
+                    <div class="price-tag" data-i18n="p_popular">Recommended</div>
+                    <div class="price-tier">Studio</div>
+                    <div class="price-amount" data-i18n="p2_price">179 <span>EUR / month</span></div>
+                    <p class="price-desc" data-i18n="p_studio_desc">For small teams managing a growing client base.</p>
+                    <ul class="price-features">
+                        <li data-i18n="p_studio_f1">Up to 10 active clients</li>
+                        <li data-i18n="p_studio_msgs">15,000 credits / month</li>
+                        <li data-i18n="p_model_adv">Advanced AI models</li>
+                        <li data-i18n="p_brand">Custom branding per client</li>
+                        <li data-i18n="p_leads">Lead capture</li>
+                        <li data-i18n="p_analytics">Chat analytics</li>
+                        <li data-i18n="p_human_assist">Human Assist - live handoff</li>
+                    </ul>
+                </div>
+                <div class="price-card" data-tier="agency">
+                    <div class="price-tier">Agency</div>
+                    <div class="price-amount" data-i18n="p3_price">399 <span>EUR / month</span></div>
+                    <p class="price-desc" data-i18n="p_agency_desc">For agencies running a real client roster.</p>
+                    <ul class="price-features">
+                        <li data-i18n="p_agency_f1">Up to 25 active clients</li>
+                        <li data-i18n="p_agency_msgs">60,000 credits / month</li>
+                        <li data-i18n="p_model_adv">Advanced AI models</li>
+                        <li data-i18n="p_team">Team member access</li>
+                        <li data-i18n="p_leads">Lead capture</li>
+                        <li data-i18n="p_human_assist">Human Assist - live handoff</li>
+                    </ul>
+                </div>
+                <div class="price-card" data-tier="scale">
+                    <div class="price-tier">Scale</div>
+                    <div class="price-amount" data-i18n="p4_price">899 <span>EUR / month</span></div>
+                    <p class="price-desc" data-i18n="p3_desc">For large operations growing a bigger client portfolio.</p>
+                    <ul class="price-features">
+                        <li data-i18n="p3_f1">Up to 100 active clients</li>
+                        <li data-i18n="p_scale_msgs">300,000 credits / month</li>
+                        <li data-i18n="p_model_adv">Advanced AI models</li>
+                        <li data-i18n="p_team">Team member access</li>
+                        <li data-i18n="p_leads">Lead capture</li>
+                        <li data-i18n="p_brand">Custom branding per client</li>
+                        <li data-i18n="p_human_assist">Human Assist - live handoff</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="font-size:0.75rem;color:#4b5563;margin:0.6rem auto 0;text-align:center;font-style:italic;line-height:1.5" data-i18n="price_credit_note">Credits per AI reply depend on model choice. Flash models (recommended) use 1 credit — sufficient for most chatbots with trained knowledge. Pro model uses 3 credits per reply.</p>
+
+            <div class="dogfood">
+                <h3 data-i18n="dog_title">This page runs on ClientRelay</h3>
+                <p data-i18n="dog_desc">The chatbot in the corner? That's a real ClientRelay client. Same platform your clients would use. One hub, many bots, each with its own brain.</p>
+                <div class="dogfood-labels">
+                    <span class="dogfood-label" data-i18n="dog_l1">Product bot - this page</span>
+                    <span class="dogfood-label" data-i18n="dog_l2">One superhub, multiple clients</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ClientRelay &middot; <a href="/app/">Dashboard</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a></p>
+    </footer>
+
+    <!-- ClientRelay Product Bot -->
+    <script
+        src="https://clientrelay.tech/widget/chatbot.js"
+        data-client="clientrelay-product"
+        data-name="ClientRelay AI"
+        data-greeting="Hi! 👋 I'm the ClientRelay assistant. Ask me about our AI chatbot platform for agencies!"
+        data-color="#0ea5e9"
+    ></script>
+
+    <script>
+    // ── 3D Perspective Wave Mesh ──
+    (function() {
+      const canvas = document.getElementById('waveCanvas');
+      const ctx = canvas.getContext('2d');
+      let width, height, dpr, time = 0;
+      function resize() {
+        dpr = window.devicePixelRatio || 1;
+        const rect = canvas.getBoundingClientRect();
+        width = rect.width; height = rect.height;
+        canvas.width = width * dpr; canvas.height = height * dpr;
+        ctx.setTransform(1,0,0,1,0,0); ctx.scale(dpr, dpr);
+      }
+      const COLS=70, ROWS=40, SW=2400, SD=1800, CH=180, FL=600, OP=0.5;
+      function proj(x,y,z) {
+        const dz=z-(-150); if(dz<=1) return null;
+        return {x: width/2+(x*FL)/dz, y: height*0.78+((y-CH)*FL)/dz, dz};
+      }
+      function buildGrid() {
+        const g=[];
+        for(let r=0;r<ROWS;r++) {
+          const row=[], tz=r/(ROWS-1), z=tz*SD;
+          for(let c=0;c<COLS;c++) {
+            const tx=c/(COLS-1), x=(tx-0.5)*SW;
+            const p1=x*0.0028*0.6+z*0.0028+time*0.18;
+            const p2=x*0.0014-z*0.0014*0.4+time*0.10;
+            const w=Math.sin(p1)*55+Math.sin(p2)*35;
+            row.push({world:{x,y:w,z}, screen:proj(x,w,z), depthT:tz});
+          }
+          g.push(row);
+        }
+        return g;
+      }
+      function dA(t) { if(t<0.05) return t/0.05*0.9; if(t>0.7) return Math.max(0,(1-t)/0.3)*0.9; return 0.9; }
+      function vF(sy) {
+        const c=height*0.5, h=height*0.35, d=Math.abs(sy-c);
+        if(d<h*0.6) return 1; if(d>h) return 0; return 1-(d-h*0.6)/(h*0.4);
+      }
+      function drawBg() {
+        const g=ctx.createLinearGradient(0,0,0,height);
+        g.addColorStop(0,'#0a2247'); g.addColorStop(0.5,'#0c2a55'); g.addColorStop(1,'#0a2247');
+        ctx.fillStyle=g; ctx.fillRect(0,0,width,height);
+      }
+      function drawMesh(grid) {
+        const H=205; ctx.lineWidth=0.6;
+        for(let r=0;r<ROWS;r++) for(let c=0;c<COLS-1;c++) {
+          const a=grid[r][c],b=grid[r][c+1]; if(!a.screen||!b.screen) continue;
+          const al=(dA(a.depthT)+dA(b.depthT))/2*(vF(a.screen.y)+vF(b.screen.y))/2*0.55*OP;
+          if(al<0.02) continue;
+          ctx.strokeStyle=`hsla(${H},95%,75%,${al})`; ctx.beginPath(); ctx.moveTo(a.screen.x,a.screen.y); ctx.lineTo(b.screen.x,b.screen.y); ctx.stroke();
+        }
+        for(let c=0;c<COLS;c++) for(let r=0;r<ROWS-1;r++) {
+          const a=grid[r][c],b=grid[r+1][c]; if(!a.screen||!b.screen) continue;
+          const al=(dA(a.depthT)+dA(b.depthT))/2*(vF(a.screen.y)+vF(b.screen.y))/2*0.55*OP;
+          if(al<0.02) continue;
+          ctx.strokeStyle=`hsla(${H},95%,75%,${al})`; ctx.beginPath(); ctx.moveTo(a.screen.x,a.screen.y); ctx.lineTo(b.screen.x,b.screen.y); ctx.stroke();
+        }
+        for(let r=0;r<ROWS-1;r++) for(let c=0;c<COLS-1;c++) {
+          if((r+c)%2!==0) continue;
+          const a=grid[r][c],b=grid[r+1][c+1]; if(!a.screen||!b.screen) continue;
+          const al=(dA(a.depthT)+dA(b.depthT))/2*(vF(a.screen.y)+vF(b.screen.y))/2*0.32*OP;
+          if(al<0.02) continue;
+          ctx.strokeStyle=`hsla(${H},95%,80%,${al})`; ctx.beginPath(); ctx.moveTo(a.screen.x,a.screen.y); ctx.lineTo(b.screen.x,b.screen.y); ctx.stroke();
+        }
+        for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) {
+          const p=grid[r][c]; if(!p.screen) continue;
+          const al=dA(p.depthT)*vF(p.screen.y)*OP; if(al<0.04) continue;
+          if(p.world.y>30) { ctx.fillStyle=`hsla(${H+5},100%,85%,${al*0.4})`; ctx.beginPath(); ctx.arc(p.screen.x,p.screen.y,2.6,0,Math.PI*2); ctx.fill(); }
+          ctx.fillStyle=`hsla(${H},95%,82%,${al})`; ctx.beginPath(); ctx.arc(p.screen.x,p.screen.y,1.0,0,Math.PI*2); ctx.fill();
+        }
+      }
+      function draw() { drawBg(); const g=buildGrid(); ctx.globalCompositeOperation='lighter'; drawMesh(g); ctx.globalCompositeOperation='source-over'; }
+      function animate() { time+=0.016; draw(); requestAnimationFrame(animate); }
+      resize(); window.addEventListener('resize', resize); animate();
+    })();
+    </script>
+
+    <script>
+    const L = {
+      no: {
+        nav_how:'Slik fungerer det', nav_features:'Funksjoner', nav_pricing:'Priser', nav_cta:'Dashboard →',
+        hero_badge:'Nå i tidlig tilgang', hero_title:'Bygg, administrer eller videreselg AI-chatboter fra én hub.',
+        hero_sub:'Lanser merkevarebyggede AI-chatboter for kunder, kampanjer, avdelinger eller din egen bedrift. Lim inn en nettadresse, gå live på sekunder, fang leads og spor resultater \u2014 ingen kode nødvendig.',
+        hero_cta:'Start gratis →', hero_ghost:'Se hvordan det fungerer',
+        hero_client_link:'Trenger du bare én frittstående chatbot? Kom i gang gjennom vår partner Spektrum →',
+        tagline:'Rask å starte. Smartere med bruk. Raskere over tid.',
+        tagline_sub:'ClientRelay kombinerer on-demand-henting med progressiv caching. Den starter raskt, henter riktig informasjon ved behov og l\u00e6rer seg hvilke sider som betyr mest over tid.',
+        how_label:'Slik fungerer det', how_title:'Live på 30 sekunder. Tilpasset på 15 minutter.',
+        how_sub:'Fra registrering til en fungerende AI-chatbot på kundens nettside. Ingen kode. Ingen API-nøkler. Ingen konfigurasjonsmareritt.',
+        step1_title:'Opprett din hub', step1_desc:'Logg inn med Google. Hubben opprettes automatisk. Du er eieren - legg til teammedlemmer senere om du vil.',
+        step2_title:'Legg til en klient', step2_desc:'Gi den et navn og lim inn nettside-URL. AI-en crawler siden og lærer bedriften automatisk. Hver klient har sin egen AI-hjerne.',
+        step3_title:'Integrer og lanser', step3_desc:'Kopier én script-tag. Lim den inn på kundens nettside. Chatboten er live - med tilpasset merkevare, leadfangst og analyse.',
+        feat_label:'Bygd for byråer', feat_title:'Alt du trenger, ingenting du ikke trenger',
+        feat_sub:'En fokusert plattform som gjør multi-klient AI riktig - uten enterprise-oppblåsthet.',
+        f1_t:'Multi-klient fra dag én', f1_d:'Hver konto er en hub. Start med én klient, skaler til hundre. Samme arkitektur, ingen migrering.',
+        f2_t:'Egen kunnskapsbase per klient', f2_d:'Hver klient har sin egen kunnskapsbase, persona og systemprompt. Ingen kryssforurensning.',
+        f3_t:'White-label widget', f3_d:'Tilpassede farger, navn, hilsener og forslag per klient. Det ser ut som deres, ikke ditt.',
+        f4_t:'Leadgenerering og analyse', f4_d:'AI-utløste skjemaer samler kontaktinfo naturlig. Se chatlogger og leads per klient.',
+        f5_t:'Hub-sikkerhet', f5_d:'Radsikkerhet sikrer at hver hub kun ser sine egne klienter. Superhub-tilsyn for plattformadminer.',
+        f6_t:'Ingen kode nødvendig', f6_d:'Én script-tag per klient. Shadow DOM-isolering betyr null CSS-konflikter. Bare lim inn og kjør.',
+        f7_t:'AI-markedsføringskonsulent - inkludert', f7_d:'Kundens chatbot kjenner allerede virksomheten. Den gir SEO-råd, innholdsforslag og markedsføringstips - uten ekstra kostnad.',
+        f8_t:'AI-promptekonsulent - inkludert', f8_d:'Usikker på hvordan du setter opp en chatbot-persona? AI-en skriver sin egen systemprompt. Beskriv virksomheten - resten ordner den selv.',
+        f9_t:'Human Assist - live overlevering', f9_d:'Når AI-en ikke kan hjelpe, trykker besøkende én knapp og kobles til en ekte person. Operatører håndterer live-chatter fra en mobilvennlig app - ingen ekstra programvare nødvendig.',
+        price_label:'Enkel prising', price_title:'Skaler n\u00e5r du er klar', price_sub:'Velg en plan etter hvor mange aktive klienter du trenger. Kreditter er inkludert i alle planer. Ingen overraskelser.',
+        p_starter_desc:'For frilansere som får sine første klienter ombord.',
+        p_studio_desc:'For små team som administrerer en voksende klientbase.',
+        p_agency_desc:'For byråer med en ekte klientportefølje.',
+        p3_desc:'For større operasjoner som bygger et bredt klientnettverk.',
+        p_starter_f1:'Opptil 3 aktive klienter', p_studio_f1:'Opptil 10 aktive klienter', p_agency_f1:'Opptil 25 aktive klienter',
+        p_starter_msgs:'2 000 kreditter / mnd', p_studio_msgs:'15 000 kreditter / mnd', p_agency_msgs:'60 000 kreditter / mnd', p_scale_msgs:'300 000 kreditter / mnd',
+        p3_f1:'Opptil 100 aktive klienter',
+        p3_f2:'Premium AI-modeller', p_model_fast:'Rask AI-modell', p_model_adv:'Avanserte AI-modeller', p_brand:'Tilpasset merkevare per klient', p_leads:'Leadgenerering',
+        p_analytics:'Chatanalyse', p_analytics_leads:'Chatanalyse og leads', p_team:'Teammedlemstilgang', p_popular:'Anbefalt', p_human_assist:'Human Assist - live overlevering',
+        price_credit_note:'Kreditter per AI-svar avhenger av modellvalg. Flash-modeller (anbefalt) bruker 1 kreditt \u2014 tilstrekkelig for de fleste chatboter med oppl\u00e6rt kunnskap. Pro-modell bruker 3 kreditter per svar.',
+        dog_title:'Denne siden kjører på ClientRelay',
+        dog_desc:'Chatboten i hjørnet er en ekte ClientRelay-klient. Dette er samme plattform som kundene dine kan bruke: én hub, mange chatboter, hver med sin egen kunnskap.',
+        dog_l1:'Produktbot for denne siden', dog_l2:'Én hub, flere klienter',
+        dog_live_intro:'Se den live hos en ekte kunde:', dog_live_link:'Spektrum Profil AS — gosh-spektrum.no',
+        p0_desc:'Prøv det ut. Ingen kredittkort nødvendig. Opprett hubben din og sett opp din første chatbot i dag.',
+        p0_f1:'2 aktive klienter', p0_f2:'50 kreditter / mnd', p0_inactive:'Inaktive boter fjernes etter 14 dager',
+        p0_price:'0 <span>NOK / mnd</span>', p1_price:'750 <span>NOK / mnd</span>', p2_price:'1 990 <span>NOK / mnd</span>', p3_price:'4 490 <span>NOK / mnd</span>', p4_price:'9 990 <span>NOK / mnd</span>',
+        demo_label:'Se det i aksjon', demo_title:'Fra null til live chatbot på 2 minutter', demo_sub:'Se en ekte oppsettsøkt fra start til slutt. Ingen redigering, ingen triks - bare selve produktet.',
+        showcase_label:'Live hos en ekte kunde', showcase_title:'Se den i produksjon', showcase_desc:'Spektrum Profil AS bruker en ClientRelay-chatbot for å hjelpe besøkende med produktkatalogen, svare på spørsmål om trykk og gravering, og veilede kjøpsbeslutninger — 24/7, på norsk.', showcase_stat:'Etter 2 minutter var denne klar til å svare på spørsmål fra 29 000 sider.', showcase_cta:'Besøk Spektrum Profil AS — gosh-spektrum.no',
+        reseller_label:'Bygg en bedrift', reseller_title:'Gjør AI-chatboter til løpende inntekter', reseller_sub:'Du bare setter opp chatboter \u2014 du selger dem. ClientRelay gir deg verktøyene til å bygge en ekte AI-tjenestebedrift.',
+        r1_t:'Sett dine egne priser', r1_d:'Definer egne prisnivåer på promosiden din. Du bestemmer hva du tar betalt \u2014 vi håndterer plattformen.',
+        r2_t:'Din egen promoside', r2_d:'Hver hub får en merkevaretilpasset promoside med din tagline, prisnivåer og en direkte registreringslenke. Del den med leads \u2014 de kommer til deg.',
+        r3_t:'Inviter og onboard kunder', r3_d:'Send invitasjonslenker, administrer ventende registreringer og onboard kunder med sine egne merkevare-chatboter \u2014 alt fra din hub.',
+        r4_t:'Full oversikt', r4_d:'Se alle kunders chatlogger, leads og bruk. Vit nøyaktig hva som fungerer og hva du bør optimalisere \u2014 uten å spørre dem.',
+        reseller_cta:'Start din hub gratis →'
+      },
+      se: {
+        nav_how:'Så fungerar det', nav_features:'Funktioner', nav_pricing:'Priser', nav_cta:'Dashboard →',
+        hero_badge:'Nu i tidig åtkomst', hero_title:'Bygg, hantera eller sälj vidare AI-chatbotar från en hubb.',
+        hero_sub:'Lansera varumärkesanpassade AI-chatbotar för kunder, kampanjer, avdelningar eller din egen verksamhet. Klistra in en webbadress, gå live på sekunder, fånga leads och spåra resultat \u2014 ingen kod behövs.',
+        hero_cta:'Starta gratis →', hero_ghost:'Se hur det fungerar',
+        hero_client_link:'Behöver du bara en fristående chatbot? Kom igång genom vår partner Spektrum →',
+        tagline:'Snabb att starta. Smartare med användning. Snabbare över tid.',
+        tagline_sub:'ClientRelay kombinerar on-demand-hämting med progressiv caching. Den startar snabbt, hämtar rätt information vid behov och lär sig vilka sidor som betyder mest över tid.',
+        how_label:'Så fungerar det', how_title:'Live på 30 sekunder. Anpassad på 15 minuter.',
+        how_sub:'Från registrering till en fungerande AI-chatbot på kundens webbplats. Ingen kod. Inga API-nycklar. Ingen konfigurationsmardröm.',
+        step1_title:'Skapa din hubb', step1_desc:'Logga in med Google. Din hubb skapas automatiskt. Du är ägaren - lägg till teammedlemmar senare om du vill.',
+        step2_title:'Lägg till en klient', step2_desc:'Ge den ett namn och klistra in webbadressen. AI:n crawlar sidan och lär sig verksamheten automatiskt. Varje klient har sin egen AI-hjärna.',
+        step3_title:'Integrera och lansera', step3_desc:'Kopiera en script-tagg. Klistra in den på kundens webbplats. Chatboten är live - med anpassat varumärke, leadinsamling och analys.',
+        feat_label:'Byggt för byråer', feat_title:'Allt du behöver, inget du inte behöver',
+        feat_sub:'En fokuserad plattform som gör multi-klient AI rätt - utan enterprise-svällning.',
+        f1_t:'Multi-klient från dag ett', f1_d:'Varje konto är en hubb. Börja med en klient, skala till hundra. Samma arkitektur, ingen migrering.',
+        f2_t:'Separat kunskap per klient', f2_d:'Varje klient har sin egen kunskapsbas, persona och systemprompt. Ingen korskontaminering.',
+        f3_t:'White-label widget', f3_d:'Anpassade färger, namn, hälsningar och förslag per klient. Det ser ut som deras, inte ditt.',
+        f4_t:'Leadinsamling och analys', f4_d:'AI-utlösta formulär samlar kontaktinfo naturligt. Se chattloggar och leads per klient.',
+        f5_t:'Hubb-säkerhet', f5_d:'Radsäkerhet säkerställer att varje hubb bara ser sina egna klienter. Superhubb-tillsyn för plattformsadmins.',
+        f6_t:'Ingen kod krävs', f6_d:'En script-tagg per klient. Shadow DOM-isolering betyder noll CSS-konflikter. Bara klistra och kör.',
+        f7_t:'AI-marknadsföringskonsult - inkluderad', f7_d:'Din klients chatbot känner redan verksamheten. Den ger SEO-råd, innehållsförslag och marknadsföringstips - utan extra kostnad.',
+        f8_t:'AI-promptkonsult - inkluderad', f8_d:'Osäker på hur du sätter upp en chatbot-persona? AI:n skriver sin egen systemprompt. Beskriv verksamheten - resten sköter den själv.',
+        f9_t:'Human Assist - live överlämning', f9_d:'När AI:n inte kan hjälpa trycker besökare på en knapp och kopplas till en riktig person. Operatörer hanterar live-chattar från en mobilvennlig app - ingen extra programvara behövs.',
+        price_label:'Enkel prissättning', price_title:'Skala i din takt', price_sub:'Välj en plan efter hur många aktiva klienter du behöver. Krediter ingår i alla planer. Inga överraskningar.',
+        p_starter_desc:'För frilansare som tar sina första klienter ombord.',
+        p_studio_desc:'För små team som hanterar en växande klientbas.',
+        p_agency_desc:'För byråer med en riktig klientportfölj.',
+        p3_desc:'För större verksamheter som bygger ett brett klientnätverk.',
+        p_starter_f1:'Upp till 3 aktiva klienter', p_studio_f1:'Upp till 10 aktiva klienter', p_agency_f1:'Upp till 25 aktiva klienter',
+        p_starter_msgs:'2 000 krediter / mån', p_studio_msgs:'15 000 krediter / mån', p_agency_msgs:'60 000 krediter / mån', p_scale_msgs:'300 000 krediter / mån',
+        p3_f1:'Upp till 100 aktiva klienter',
+        p3_f2:'Premium AI-modeller', p_model_fast:'Snabb AI-modell', p_model_adv:'Avancerade AI-modeller', p_brand:'Anpassat varumärke per klient', p_leads:'Leadinsamling',
+        p_analytics:'Chattanalys', p_analytics_leads:'Chattanalys och leads', p_team:'Teammedlemsåtkomst', p_popular:'Rekommenderad', p_human_assist:'Human Assist - live överlämning',
+        price_credit_note:'Krediter per AI-svar beror p\u00e5 modellval. Flash-modeller (rekommenderade) anv\u00e4nder 1 kredit \u2014 tillr\u00e4ckligt f\u00f6r de flesta chatbotar med tr\u00e4nad kunskap. Pro-modell anv\u00e4nder 3 krediter per svar.',
+        dog_title:'Denna sida körs på ClientRelay',
+        dog_desc:'Chatboten i hörnet? Det är en riktig ClientRelay-klient. Samma plattform som dina kunder skulle använda. En hubb, många botar, var och en med sin egen hjärna.',
+        dog_l1:'Produktbot - denna sida', dog_l2:'En superhubb, flera klienter',
+        dog_live_intro:'Se den live hos en riktig kund:', dog_live_link:'Spektrum Profil AS — gosh-spektrum.no',
+        p0_desc:'Testa det. Inget kreditkort behövs. Skapa din hubb och sätt upp din första chatbot idag.',
+        p0_f1:'2 aktiva klienter', p0_f2:'50 krediter / mån', p0_inactive:'Inaktiva botar tas bort efter 14 dagar',
+        p0_price:'0 <span>SEK / mån</span>', p1_price:'750 <span>SEK / mån</span>', p2_price:'1 990 <span>SEK / mån</span>', p3_price:'4 490 <span>SEK / mån</span>', p4_price:'9 990 <span>SEK / mån</span>',
+        demo_label:'Se det i aktion', demo_title:'Från noll till live chatbot på 2 minuter', demo_sub:'Se en riktig installationssession från start till slut. Ingen redigering, inga tricks - bara själva produkten.',
+        showcase_label:'Live hos en riktig kund', showcase_title:'Se den i produktion', showcase_desc:'Spektrum Profil AS använder en ClientRelay-chatbot för att hjälpa besökare navigera produktkatalogen, svara på frågor om tryckmetoder och vägleda köpbeslut — 24/7, på norska.', showcase_stat:'Efter 2 minuter var denna redo att svara på frågor från 29 000 sidor.', showcase_cta:'Besök Spektrum Profil AS — gosh-spektrum.no',
+        reseller_label:'Bygg en verksamhet', reseller_title:'Gör AI-chatbotar till löpande intäkter', reseller_sub:'Du sätter inte bara upp chatbotar \u2014 du säljer dem. ClientRelay ger dig verktygen att bygga en riktig AI-tjänsteverksamhet.',
+        r1_t:'Sätt dina egna priser', r1_d:'Definiera egna prisnivåer på din promosida. Du bestämmer vad du tar betalt \u2014 vi hanterar plattformen.',
+        r2_t:'Din egen promosida', r2_d:'Varje hubb får en varumärkesanpassad promosida med din tagline, prisnivåer och en direkt registreringslänk. Dela den med leads \u2014 de kommer till dig.',
+        r3_t:'Bjud in och onboarda kunder', r3_d:'Skicka inbjudningslänkar, hantera väntande registreringar och onboarda kunder med sina egna varumärkesanpassade chatbotar \u2014 allt från din hubb.',
+        r4_t:'Full insyn', r4_d:'Se alla kunders chattloggar, leads och användning. Vet exakt vad som fungerar och vad du bör optimera \u2014 utan att fråga dem.',
+        reseller_cta:'Starta din hubb gratis →'
+      }
+    };
+    // English is the HTML default - no dict needed
+    const saved = {}; // cache EN values from DOM
+    let _pricingTiers = null; // cached tier data from DB
+    function applyDynamicPricing(lang) {
+      if (!_pricingTiers) return;
+      const currKey = lang === 'no' ? 'nok' : lang === 'se' ? 'sek' : 'eur';
+      const currLabel = lang === 'no' ? 'NOK' : lang === 'se' ? 'SEK' : 'EUR';
+      const perMonth = lang === 'no' ? 'mnd' : lang === 'se' ? 'mån' : 'month';
+      const creditsLabel = lang === 'no' ? 'kreditter' : lang === 'se' ? 'krediter' : 'credits';
+      const upTo = lang === 'no' ? 'Opptil' : lang === 'se' ? 'Upp till' : 'Up to';
+      const clientsLabel = lang === 'no' ? 'aktive klienter' : lang === 'se' ? 'aktiva klienter' : 'active clients';
+      const clientLabel = (n) => n === 1
+        ? (lang === 'no' ? 'aktiv klient' : lang === 'se' ? 'aktiv klient' : 'active client')
+        : clientsLabel;
+      const fmt = (n) => n >= 1000 ? n.toLocaleString('en').replace(/,/g, ' ') : String(n);
+      _pricingTiers.forEach(t => {
+        const card = document.querySelector(`.price-card[data-tier="${t.tier}"]`);
+        if (!card) return;
+        const priceEl = card.querySelector('.price-amount');
+        if (priceEl) {
+          const price = t['price_' + currKey] || 0;
+          priceEl.innerHTML = `${fmt(price)} <span>${currLabel} / ${perMonth}</span>`;
+        }
+        const lis = card.querySelectorAll('.price-features li');
+        if (lis[0] && t.max_clients) {
+          if (t.tier === 'free') {
+            lis[0].textContent = `${t.max_clients} ${clientLabel(t.max_clients)}`;
+          } else {
+            lis[0].textContent = `${upTo} ${t.max_clients} ${clientsLabel}`;
+          }
+        }
+        if (lis[1] && t.monthly_messages) {
+          lis[1].textContent = `${fmt(t.monthly_messages)} ${creditsLabel} / ${perMonth}`;
+        }
+      });
+    }
+    function setLang(lang) {
+      localStorage.setItem('cr_landing_lang', lang);
+      document.documentElement.lang = lang === 'no' ? 'nb' : lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const k = el.dataset.i18n;
+        if (!saved[k]) saved[k] = el.innerHTML;
+        el.innerHTML = (L[lang] && L[lang][k]) || saved[k];
+      });
+      document.querySelectorAll('#langSwitch button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+      applyDynamicPricing(lang);
+    }
+    // Domain-based lang: always Swedish on clientrelay.se
+    const initLang = 'se';
+    setLang(initLang);
+
+    // ── Fetch live pricing from DB ──
+    (async function() {
+      try {
+        const SB = 'https://api.clientrelay.tech';
+        const AK = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5d2NueWltbGhpd2JicXF6dm9lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU1NjIyOTYsImV4cCI6MjA4MTEzODI5Nn0.rVPlSGwbKz-HyODCz3f2tFW-9sm1X3zRVuWoDuwsM24';
+        const res = await fetch(`${SB}/rest/v1/rpc/get_public_pricing`, {
+          method: 'POST',
+          headers: { 'apikey': AK, 'Authorization': `Bearer ${AK}`, 'Content-Type': 'application/json' },
+          body: '{}'
+        });
+        if (!res.ok) return;
+        _pricingTiers = await res.json();
+        applyDynamicPricing(localStorage.getItem('cr_landing_lang') || initLang);
+      } catch (e) { /* silent fallback to hardcoded values */ }
+    })();
+    </script>
+
+    <!-- Floating Chat Bubbles -->
+    <script>
+    (function() {
+      var bubbleTexts = {
+        en: [
+          'What are your opening hours?',
+          'Can you help me change a reservation?',
+          'Where can I find my invoice?',
+          'Do you offer free returns?',
+          'What products do you recommend?',
+          'How does the return process work?',
+          'Can I get a personalized offer?',
+          'What payment methods do you accept?'
+        ],
+        no: [
+          'Hvilke \u00e5pningstider har dere i dag?',
+          'Kan du hjelpe meg med \u00e5 endre en reservasjon?',
+          'Hvor finner jeg fakturaen min?',
+          'Hva skjer med bestillingen min?',
+          'Kan jeg f\u00e5 anbefalinger til mitt behov?',
+          'Hvordan fungerer returprosessen?',
+          'Tilbyr dere support p\u00e5 kveldstid?',
+          'Hvilke betalingsmetoder aksepterer dere?'
+        ],
+        se: [
+          'Vilka \u00f6ppettider har ni idag?',
+          'Kan du hj\u00e4lpa mig \u00e4ndra en bokning?',
+          'Var hittar jag min faktura?',
+          'Vad h\u00e4nder med min best\u00e4llning?',
+          'Kan jag f\u00e5 rekommendationer?',
+          'Hur fungerar returprocessen?',
+          'Erbjuder ni support p\u00e5 kv\u00e4llen?',
+          'Vilka betalningsmetoder accepterar ni?'
+        ]
+      };
+      var positions = [
+        { top: '12%', left: '3%' },
+        { top: '8%',  left: '38%' },
+        { top: '14%', right: '4%' },
+        { top: '40%', left: '2%' },
+        { top: '42%', right: '2%' },
+        { top: '72%', left: '4%' },
+        { top: '68%', right: '3%' },
+        { top: '78%', left: '30%' }
+      ];
+      var container = document.getElementById('chatBubbles');
+      if (!container || window.matchMedia('(max-width:480px)').matches) return;
+      var MAX_LIVES = 2;
+      var VISIBLE_MS = 6000;
+      var FADE_MS = 2500;
+      var SPAWN_INTERVAL = 4000;
+      var lives = [];
+      var active = new Set();
+      var bubbleEls = [];
+      function getLang() { return localStorage.getItem('cr_landing_lang') || 'en'; }
+      function buildBubbles() {
+        container.innerHTML = '';
+        bubbleEls = [];
+        var lang = getLang();
+        var texts = bubbleTexts[lang] || bubbleTexts.en;
+        lives = texts.map(function() { return MAX_LIVES; });
+        active.clear();
+        texts.forEach(function(text, i) {
+          var pos = positions[i % positions.length];
+          var el = document.createElement('div');
+          el.className = 'chat-bubble';
+          el.style.cssText = (pos.top?'top:'+pos.top+';':'') + (pos.left?'left:'+pos.left+';':'') + (pos.right?'right:'+pos.right+';':'');
+          el.innerHTML = '<span class="bubble-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>' + text;
+          container.appendChild(el);
+          bubbleEls.push(el);
+        });
+      }
+      function getAvailable() {
+        var a = [];
+        for (var i = 0; i < lives.length; i++) { if (lives[i] > 0 && !active.has(i)) a.push(i); }
+        return a;
+      }
+      function showBubble(idx) {
+        if (lives[idx] <= 0 || active.has(idx)) return;
+        active.add(idx); lives[idx]--;
+        bubbleEls[idx].classList.add('visible');
+        setTimeout(function() {
+          bubbleEls[idx].classList.remove('visible');
+          setTimeout(function() { active.delete(idx); if (lives[idx] <= 0) bubbleEls[idx].style.display = 'none'; }, FADE_MS);
+        }, VISIBLE_MS);
+      }
+      function spawnPair() {
+        var avail = getAvailable();
+        if (avail.length === 0) return;
+        for (var i = avail.length - 1; i > 0; i--) { var j = Math.floor(Math.random()*(i+1)); var t = avail[i]; avail[i] = avail[j]; avail[j] = t; }
+        for (var k = 0; k < Math.min(2, avail.length); k++) showBubble(avail[k]);
+        if (getAvailable().length > 0 || active.size > 0) setTimeout(spawnPair, SPAWN_INTERVAL);
+      }
+      buildBubbles();
+      setTimeout(spawnPair, 2000);
+      var origSetLang = window.setLang;
+      if (typeof setLang === 'function') {
+        window.setLang = function(lang) { origSetLang(lang); buildBubbles(); setTimeout(spawnPair, 1000); };
+      }
+    })();
+    </script>
+
+    <!-- Analytics (1 ping/day, no PII) -->
+    <script>
+    (function(){
+      var dk='cr_v_'+new Date().toDateString();
+      if(localStorage.getItem(dk)) return;
+      localStorage.setItem(dk,'1');
+      var m=/Mobi|Android/i.test(navigator.userAgent)?'mobile':'desktop';
+      var r=document.referrer||'';
+      var l=localStorage.getItem('cr_landing_lang')||'en';
+      fetch('https://cywcnyimlhiwbbqqzvoe.supabase.co/functions/v1/analytics',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({page:location.pathname,referrer:r,lang:l,device:m})
+      }).catch(function(){});
+    })();
+    </script>
+</body>
+</html>
