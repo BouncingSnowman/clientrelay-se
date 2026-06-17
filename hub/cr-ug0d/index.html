@@ -26,15 +26,22 @@
     <style>
         :root{--primary:#0ea5e9;--accent:#06b6d4;--bg:#071426;--bg-card:#121b2e;--text:#e4e4e7;--text-muted:#b7c4d6;--border:rgba(125,211,252,0.16)}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',-apple-system,sans-serif;background:linear-gradient(135deg,#06162d 0%,#0d2a56 44%,#071426 100%);color:var(--text);min-height:100vh}
-        .promo-container{max-width:900px;margin:0 auto;padding:60px 24px 40px;display:flex;flex-direction:column;align-items:center}
+        body{font-family:'Inter',-apple-system,sans-serif;background:linear-gradient(135deg,#06162d 0%,#0d2a56 44%,#071426 100%);color:var(--text);min-height:100vh;overflow-x:hidden}
+        #waveCanvas{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none}
+        .promo-container{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:60px 24px 40px;display:flex;flex-direction:column;align-items:center;min-height:100vh}
+        .hub-logo{max-width:320px;max-height:100px;object-fit:contain;margin-bottom:28px;padding:20px 32px;border-radius:12px}
         .hero-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;text-align:center;line-height:1.15;margin-bottom:16px}
+        .hero-website{font-size:0.78rem;color:var(--text-muted);text-decoration:none;margin-bottom:20px;display:inline-block}
+        .hero-website:hover{color:var(--primary)}
         .hero-tagline{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--text-muted);text-align:center;max-width:600px;line-height:1.6;margin-bottom:40px}
         .features-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:48px}
         .feature-chip{padding:8px 16px;border-radius:10px;background:var(--bg-card);border:1px solid var(--border);font-size:0.88rem}
         .pricing-section{width:100%;max-width:1200px;margin-bottom:48px}
+        .pricing-label{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);text-align:center;margin-bottom:24px}
         .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
-        .glass-card{padding:24px 18px;border-radius:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)}
+        .glass-card{position:relative;display:block;text-decoration:none;color:inherit;padding:24px 18px;border-radius:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)}
+        .glass-card.featured{border-color:rgba(14,165,233,0.25);background:rgba(14,165,233,0.06);box-shadow:0 8px 32px rgba(14,165,233,0.08)}
+        .card-tag{position:absolute;top:-10px;right:20px;padding:4px 14px;border-radius:12px;background:var(--primary);color:#fff;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
         .card-tier{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--primary);margin-bottom:8px}
         .card-price{font-size:1.6rem;font-weight:800;margin-bottom:4px}
         .card-price span{font-size:0.82rem;font-weight:500;color:var(--text-muted)}
@@ -47,34 +54,107 @@
     </style>
 </head>
 <body>
+    <canvas id="waveCanvas"></canvas>
     <main class="promo-container">
+        <img class="hub-logo" src="https://clientrelay.tech/app/logo.png?v=1.5.562" alt="CR" style="background:transparent" onerror="this.remove()">
         <h1 class="hero-title">Din egen AI-assistent på din webbplats</h1>
+        <a class="hero-website" href="https://clientrelay.no/" target="_blank" rel="noopener">clientrelay.no</a>
         <p class="hero-tagline">Svarar automatiskt på kundernas frågor om produkter och tjänster, 24/7</p>
         <section class="features-strip" aria-label="Features"><div class="feature-chip">Svarar kunder 24/7</div><div class="feature-chip">Känner din verksamhet</div><div class="feature-chip">Fångar upp leads</div><div class="feature-chip">Klar på minuter</div></section>
-        <section class="pricing-section" aria-label="Pricing"><div class="pricing-grid"><div class="glass-card pricing-card">
+        <section class="pricing-section" aria-label="Pricing"><h2 class="pricing-label">Paket och priser</h2><div class="pricing-grid"><a class="glass-card pricing-card" href="https://clientrelay.se/hub/signup/?hub=cr-ug0d&amp;package=gratis" rel="noopener">
             <div class="card-tier">Gratis</div>
-            <div class="card-price"><span>Free</span></div>
-            <div class="card-desc">Test før du kjøper.</div>
-            <ul class="card-features"><li>Test før du kjøper</li><li>50 chat credits per måned</li><li>AI-chatbot trent på din nettside</li><li>Skjema med kontaktinfo fra kunder i chatten</li></ul>
-        </div><div class="glass-card pricing-card">
-            <div class="card-tier">Basis</div>
-            <div class="card-price">499 <span>NOK / mnd</span></div>
-            <div class="card-desc">For små virksomheter som vil komme i gang.</div>
-            <ul class="card-features"><li>500 chat credits per måned</li><li>AI-chatbot trent på din nettside</li><li>Skjema med kontaktinfo fra kunder i chatten</li></ul>
-        </div><div class="glass-card pricing-card">
+            <div class="card-price"><span>Gratis</span></div>
+            <div class="card-desc">Testa innan du köper.</div>
+            <ul class="card-features"><li>Testa innan du köper</li><li>50 chat credits per månad</li><li>AI-chatbot tränad på din webbplats</li><li>Formulär med kontaktinfo från kunder i chatten</li></ul></a><div class="glass-card pricing-card">
+            <div class="card-tier">Bas</div>
+            <div class="card-price">499 <span>NOK / mån</span></div>
+            <div class="card-desc">För småföretag som vill komma igång.</div>
+            <ul class="card-features"><li>500 chat credits per månad</li><li>AI-chatbot tränad på din webbplats</li><li>Formulär med kontaktinfo från kunder i chatten</li></ul></div><div class="glass-card pricing-card">
             <div class="card-tier">Standard</div>
-            <div class="card-price">750 <span>NOK / mnd</span></div>
-            <div class="card-desc">For virksomheter som vil ha mer kapasitet og innsikt.</div>
-            <ul class="card-features"><li>2 000 chat credits per måned</li><li>Alt i Basis</li><li>Chatanalyse og statistikk</li></ul>
-        </div><div class="glass-card pricing-card">
+            <div class="card-price">750 <span>NOK / mån</span></div>
+            <div class="card-desc">För företag som vill ha mer kapacitet och insikter.</div>
+            <ul class="card-features"><li>2 000 chat credits per månad</li><li>Allt i Bas</li><li>Chattanalys och statistik</li></ul></div><div class="glass-card pricing-card">
             <div class="card-tier">Premium</div>
-            <div class="card-price">1299 <span>NOK / mnd</span></div>
-            <div class="card-desc">For virksomheter med høyere trafikk og behov for overlevering.</div>
-            <ul class="card-features"><li>5 000 chat credits per måned</li><li>Alt i Standard</li><li>Premium AI-modellvalg</li><li>Human Assist – live overlevering</li></ul>
-        </div></div></section>
+            <div class="card-price">1299 <span>NOK / mån</span></div>
+            <div class="card-desc">För företag med högre trafik och behov av överlämning.</div>
+            <ul class="card-features"><li>5 000 chat credits per månad</li><li>Allt i Standard</li><li>Premium AI-modellval</li><li>Human Assist – live överlämning</li></ul></div></div></section>
         <div class="cta-section"><a class="cta-button" href="https://clientrelay.se/hub/signup/?hub=cr-ug0d">Starta gratis idag →</a></div>
         <footer class="promo-footer">Powered by <a href="https://clientrelay.tech">ClientRelay</a></footer>
     </main>
     <script src="https://clientrelay.tech/widget/chatbot.js" data-client="nocrprodukt" async></script>
+    <script>(function runPromoWave() {
+    const canvas = document.getElementById('waveCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let width, height, dpr, time = 0;
+    function resize() {
+        dpr = globalThis.devicePixelRatio || 1;
+        const rect = canvas.getBoundingClientRect();
+        width = rect.width; height = rect.height;
+        canvas.width = width * dpr; canvas.height = height * dpr;
+        ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.scale(dpr, dpr);
+    }
+    const COLS = 70, ROWS = 40, SW = 2400, SD = 1800, CH = 180, FL = 600, OP = 0.5;
+    function proj(x, y, z) {
+        const dz = z - (-150); if (dz <= 1) return null;
+        return { x: width / 2 + (x * FL) / dz, y: height * 0.78 + ((y - CH) * FL) / dz, dz };
+    }
+    function buildGrid() {
+        const g = [];
+        for (let r = 0; r < ROWS; r++) {
+            const row = [], tz = r / (ROWS - 1), z = tz * SD;
+            for (let c = 0; c < COLS; c++) {
+                const tx = c / (COLS - 1), x = (tx - 0.5) * SW;
+                const p1 = x * 0.0028 * 0.6 + z * 0.0028 + time * 0.18;
+                const p2 = x * 0.0014 - z * 0.0014 * 0.4 + time * 0.10;
+                const w = Math.sin(p1) * 55 + Math.sin(p2) * 35;
+                row.push({ world: { x, y: w, z }, screen: proj(x, w, z), depthT: tz });
+            }
+            g.push(row);
+        }
+        return g;
+    }
+    function dA(t) { if (t < 0.05) return t / 0.05 * 0.9; if (t > 0.7) return Math.max(0, (1 - t) / 0.3) * 0.9; return 0.9; }
+    function vF(sy) {
+        const c = height * 0.5, h = height * 0.35, d = Math.abs(sy - c);
+        if (d < h * 0.6) return 1; if (d > h) return 0; return 1 - (d - h * 0.6) / (h * 0.4);
+    }
+    function drawBg() {
+        const g = ctx.createLinearGradient(0, 0, 0, height);
+        g.addColorStop(0, '#0a2247'); g.addColorStop(0.5, '#0c2a55'); g.addColorStop(1, '#0a2247');
+        ctx.fillStyle = g; ctx.fillRect(0, 0, width, height);
+    }
+    function drawMesh(grid) {
+        const H = 205; ctx.lineWidth = 0.6;
+        for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS - 1; c++) {
+            const a = grid[r][c], b = grid[r][c + 1]; if (!a.screen || !b.screen) continue;
+            const al = (dA(a.depthT) + dA(b.depthT)) / 2 * (vF(a.screen.y) + vF(b.screen.y)) / 2 * 0.55 * OP;
+            if (al < 0.02) continue;
+            ctx.strokeStyle = `hsla(${H},95%,75%,${al})`; ctx.beginPath(); ctx.moveTo(a.screen.x, a.screen.y); ctx.lineTo(b.screen.x, b.screen.y); ctx.stroke();
+        }
+        for (let c = 0; c < COLS; c++) for (let r = 0; r < ROWS - 1; r++) {
+            const a = grid[r][c], b = grid[r + 1][c]; if (!a.screen || !b.screen) continue;
+            const al = (dA(a.depthT) + dA(b.depthT)) / 2 * (vF(a.screen.y) + vF(b.screen.y)) / 2 * 0.55 * OP;
+            if (al < 0.02) continue;
+            ctx.strokeStyle = `hsla(${H},95%,75%,${al})`; ctx.beginPath(); ctx.moveTo(a.screen.x, a.screen.y); ctx.lineTo(b.screen.x, b.screen.y); ctx.stroke();
+        }
+        for (let r = 0; r < ROWS - 1; r++) for (let c = 0; c < COLS - 1; c++) {
+            if ((r + c) % 2 !== 0) continue;
+            const a = grid[r][c], b = grid[r + 1][c + 1]; if (!a.screen || !b.screen) continue;
+            const al = (dA(a.depthT) + dA(b.depthT)) / 2 * (vF(a.screen.y) + vF(b.screen.y)) / 2 * 0.32 * OP;
+            if (al < 0.02) continue;
+            ctx.strokeStyle = `hsla(${H},95%,80%,${al})`; ctx.beginPath(); ctx.moveTo(a.screen.x, a.screen.y); ctx.lineTo(b.screen.x, b.screen.y); ctx.stroke();
+        }
+        for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
+            const p = grid[r][c]; if (!p.screen) continue;
+            const al = dA(p.depthT) * vF(p.screen.y) * OP; if (al < 0.04) continue;
+            if (p.world.y > 30) { ctx.fillStyle = `hsla(${H + 5},100%,85%,${al * 0.4})`; ctx.beginPath(); ctx.arc(p.screen.x, p.screen.y, 2.6, 0, Math.PI * 2); ctx.fill(); }
+            ctx.fillStyle = `hsla(${H},95%,82%,${al})`; ctx.beginPath(); ctx.arc(p.screen.x, p.screen.y, 1.0, 0, Math.PI * 2); ctx.fill();
+        }
+    }
+    function draw() { drawBg(); const g = buildGrid(); ctx.globalCompositeOperation = 'lighter'; drawMesh(g); ctx.globalCompositeOperation = 'source-over'; }
+    function animate() { time += 0.016; draw(); requestAnimationFrame(animate); }
+    resize(); globalThis.addEventListener('resize', resize); animate();
+})();</script>
 </body>
 </html>
