@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inte tillgänglig — ClientRelay</title>
+    <meta name="robots" content="noindex">
+    <style>
+        :root{--primary:#0ea5e9;--accent:#06b6d4;--text:#e4e4e7;--text-muted:#b7c4d6;--border:rgba(125,211,252,0.16)}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',-apple-system,sans-serif;background:linear-gradient(135deg,#06162d 0%,#0d2a56 44%,#071426 100%);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+        .card{max-width:520px;text-align:center}
+        h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;margin-bottom:14px;line-height:1.2}
+        p{color:var(--text-muted);font-size:1.05rem;line-height:1.6;margin-bottom:28px}
+        .cta{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;font-size:1rem;font-weight:700;border-radius:12px;text-decoration:none}
+        .powered{margin-top:36px;font-size:0.82rem;color:var(--text-muted)}
+        .powered a{color:var(--primary);text-decoration:none}
+    </style>
+</head>
+<body>
+    <main class="card">
+        <h1 id="t">Sidan finns inte</h1>
+        <p id="d">Vi kunde inte hitta sidan du letade efter.</p>
+        <a class="cta" id="cta" href="https://clientrelay.tech">Till ClientRelay →</a>
+        <div class="powered">Powered by <a href="https://clientrelay.tech">ClientRelay</a></div>
+    </main>
+    <script>
+        // GitHub Pages serves this for any unmatched path. A /hub/ path means a promo
+        // page that hasn't been published for this market — point the owner to settings.
+        if (location.pathname.indexOf('/hub/') === 0 || location.pathname === '/hub') {
+            document.documentElement.lang = 'sv';
+            document.getElementById('t').textContent = 'Den här promosidan är inte aktiverad';
+            document.getElementById('d').textContent = 'Aktivera den här marknaden i hubbinställningarna för att publicera promosidan.';
+            var cta = document.getElementById('cta');
+            cta.textContent = 'Gå till hubbinställningar →';
+            cta.href = 'https://clientrelay.tech/app/';
+            document.title = 'Promosida inte aktiverad — ClientRelay';
+        }
+    </script>
+</body>
+</html>
