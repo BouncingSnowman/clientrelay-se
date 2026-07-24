@@ -566,6 +566,8 @@
         @media (prefers-reduced-motion: reduce) {
             .chat-bubble { transition: none; }
         }
+        /* Spektrum single-chatbot partner nudge is shown only to Norwegian-language visitors (partner has no EN/SV landing page yet). */
+        html:not([lang="nb"]) #spektrum-partner-link { display: none !important; }
     </style>
 </head>
 <body>
@@ -600,7 +602,7 @@
                 <a href="https://clientrelay.tech/app/signup/?lang=se" class="btn-primary" data-i18n="hero_cta">Start free →</a>
                 <a href="#how-it-works" class="btn-ghost" data-i18n="hero_ghost">See how it works</a>
             </div>
-            <a href="https://clientrelay.tech/hub/?hub=spektrum-hub" style="display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:10px 20px;border-radius:12px;background:rgba(5,12,30,0.5);border:1px solid rgba(14,165,233,0.25);box-shadow:0 4px 16px rgba(0,0,0,0.15);color:#38bdf8;font-size:0.88rem;font-weight:500;text-decoration:none;transition:all 0.2s;animation:fadeUp 0.7s ease 0.4s both" onmouseover="this.style.borderColor='rgba(14,165,233,0.4)';this.style.background='rgba(5,12,30,0.7)';this.style.boxShadow='0 4px 20px rgba(14,165,233,0.15)'" onmouseout="this.style.borderColor='rgba(14,165,233,0.25)';this.style.background='rgba(5,12,30,0.5)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.15)'">
+            <a id="spektrum-partner-link" href="https://clientrelay.tech/hub/?hub=spektrum-hub" style="display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:10px 20px;border-radius:12px;background:rgba(5,12,30,0.5);border:1px solid rgba(14,165,233,0.25);box-shadow:0 4px 16px rgba(0,0,0,0.15);color:#38bdf8;font-size:0.88rem;font-weight:500;text-decoration:none;transition:all 0.2s;animation:fadeUp 0.7s ease 0.4s both" onmouseover="this.style.borderColor='rgba(14,165,233,0.4)';this.style.background='rgba(5,12,30,0.7)';this.style.boxShadow='0 4px 20px rgba(14,165,233,0.15)'" onmouseout="this.style.borderColor='rgba(14,165,233,0.25)';this.style.background='rgba(5,12,30,0.5)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.15)'">
                 <img src="https://clientrelay.tech/hub/logos/spektrum-hub-dark.png" alt="Spektrum Logo" style="height:18px;width:auto;object-fit:contain;border-radius:2px">
                 <span data-i18n="hero_client_link">Only need one standalone chatbot? Get started through our partner Spektrum →</span>
             </a>
