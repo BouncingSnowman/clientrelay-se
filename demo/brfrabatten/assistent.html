@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- Site-local presentation of the existing rabatten assistant.
      Source: clientrelay/widget/iframe.html @ a8eba6849c14d61f74d6e9c00aa64f0a7f493def.
-     Only fixed client/production endpoint, language/title and footer branding differ.
+     Fixed client/production endpoint, language/title, branding and local privacy information.
      No backend configuration or other ClientRelay client is changed. -->
 <html lang="sv">
 <head>
@@ -485,7 +485,7 @@
 
   <!-- Footer -->
   <div class="chat-footer" id="chatFooter">
-    <a href="https://www.simplybrf.se/" target="_blank" rel="noopener">Powered by Simply BRF AI</a> · <a href="https://clientrelay.tech/privacy.html" target="_blank" rel="noopener">Privacy</a>
+    <a href="https://www.simplybrf.se/" target="_blank" rel="noopener">Powered by Simply BRF AI</a> · <a href="integritet.html" target="_blank" rel="noopener">Integritet</a>
   </div>
 </div>
 
@@ -661,7 +661,7 @@
     }
 
     const PRIVACY_NOTICE_COPY = {
-      sv: { before: 'Vi hanterar chattdata enligt vår ', link: 'integritetspolicy', after: '.' },
+      sv: { before: 'Så hanteras dina uppgifter: ', link: 'integritetsinformation', after: '.' },
       nb: { before: 'Vi behandler chatdata i henhold til vår ', link: 'personvernerklæring', after: '.' },
       en: { before: 'We handle chat data according to our ', link: 'privacy policy', after: '.' },
       de: { before: 'Wir verarbeiten Chatdaten gemäß unserer ', link: 'Datenschutzerklärung', after: '.' },
@@ -995,7 +995,7 @@
       note.className = 'chat-privacy-note';
       const copy = privacyNoticeCopy();
       const link = document.createElement('a');
-      link.href = 'https://clientrelay.tech/privacy.html';
+      link.href = 'integritet.html';
       link.target = '_blank';
       link.rel = 'noopener';
       link.textContent = copy.link;
