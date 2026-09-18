@@ -1,0 +1,11 @@
+.slot-pricing,.slot-calculator{line-height:1.6}
+.slot-pricing h2{font-size:clamp(1.8rem,4vw,3rem);margin:0 0 1rem}
+.slot-fields,.slot-levels,.slot-offer{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px;margin:20px 0}
+.slot-fields label,.slot-offer label{display:flex;flex-direction:column;gap:8px}
+.slot-fields input,.slot-offer input{font:inherit;border:1px solid var(--border,#334155);border-radius:10px;padding:12px;background:var(--bg-card,#0e2039);color:inherit;width:100%;box-sizing:border-box}
+.slot-levels section,.slot-offer section,.slot-results{padding:22px;border-radius:16px;border:1px solid var(--border,#334155);background:var(--bg-card,#0e2039)}
+.slot-levels h4{margin:0 0 12px;color:var(--accent,#0ea5e9)}
+.slot-offer output{display:block;font-size:1.5rem;font-weight:700;margin:16px 0}
+.slot-pricing a{display:inline-block;margin-top:12px;color:var(--accent,#38bdf8)}
+.slot-pricing p,.slot-calculator p{max-width:80ch}
+.slot-results strong{font-size:1.15rem}
