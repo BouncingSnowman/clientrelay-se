@@ -11,8 +11,8 @@
       gtag('config', 'G-6ZMSY0GHTK');
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClientRelay - AI-chatbotar för dina kunder</title>
-    <meta name="description" content="Bygg, hantera eller sälj vidare AI-chatbotar från en hubb. Lansera varumärkesanpassade chatbotar för kunder, kampanjer eller din egen verksamhet. Ingen kod behövs.">
+    <title>ClientRelay - AI-assistenter baserade på verksamhetens kunskap</title>
+    <meta name="description" content="Bygg, hantera eller sälj vidare AI-assistenter baserade på verksamhetens kunskap, samlade i en hubb. För kunder, kampanjer eller din egen verksamhet. Ingen kod behövs.">
     <link rel="icon" type="image/png" sizes="32x32" href="https://clientrelay.tech/assets/logo-icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://clientrelay.tech/assets/logo-icon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -28,8 +28,8 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://clientrelay.se/">
-    <meta property="og:title" content="ClientRelay - AI-chatbotar för dina kunder">
-    <meta property="og:description" content="Bygg, hantera eller sälj vidare AI-chatbotar från en hubb. Lansera varumärkesanpassade chatbotar för kunder, kampanjer eller din egen verksamhet. Ingen kod behövs.">
+    <meta property="og:title" content="ClientRelay - AI-assistenter baserade på verksamhetens kunskap">
+    <meta property="og:description" content="Bygg, hantera eller sälj vidare AI-assistenter baserade på verksamhetens kunskap, samlade i en hubb. För kunder, kampanjer eller din egen verksamhet. Ingen kod behövs.">
     <meta property="og:image" content="https://clientrelay.tech/assets/og-image.png">
     <meta property="og:site_name" content="ClientRelay">
     <meta property="og:locale" content="sv_SE">
@@ -38,8 +38,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ClientRelay - AI-chatbotar för dina kunder">
-    <meta name="twitter:description" content="Bygg, hantera eller sälj vidare AI-chatbotar från en hubb. Lansera varumärkesanpassade chatbotar för kunder eller din egen verksamhet.">
+    <meta name="twitter:title" content="ClientRelay - AI-assistenter baserade på verksamhetens kunskap">
+    <meta name="twitter:description" content="AI-assistenter baserade på verksamhetens kunskap, samlade i en hubb. För kunder, kampanjer eller din egen verksamhet.">
     <meta name="twitter:image" content="https://clientrelay.tech/assets/og-image.png">
 
     <!-- Structured Data -->
@@ -507,7 +507,6 @@
         @media (max-width: 768px) {
             nav { padding: 12px 16px; }
             .nav-links { gap: 12px; }
-            .nav-links a:not(.nav-cta) { display: none; }
             .nav-cta { padding: 7px 14px; font-size: 0.78rem; }
             .hero { padding: 100px 20px 60px; }
             .hero-copy h1 { font-size: clamp(2.35rem, 7vw, 3.2rem); }
@@ -670,6 +669,50 @@
         /* Spektrum single-chatbot partner nudge is shown only to Norwegian-language visitors (partner has no EN/SV landing page yet). */
         html:not([lang="nb"]) #spektrum-partner-link { display: none !important; }
     </style>
+
+<style id="homepage-qa-style">
+/* Carry the subtle grid and blue glow below the hero without another animation. */
+body {
+    background-image:
+        url('assets/page-glow.svg'),
+        linear-gradient(rgba(56,189,248,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,189,248,0.025) 1px, transparent 1px);
+    background-size: 2800px 2000px, 80px 80px, 80px 80px;
+    background-position: calc(50% + 700px) top, center top, center top;
+}
+section[id] { scroll-margin-top: 120px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid #38bdf8; outline-offset: 4px; }
+.mobile-nav { display: none; }
+footer p { color: var(--text-muted); line-height: 2; }
+@media (max-width: 699px), (max-width: 1000px) and (orientation: landscape) {
+    nav { padding: 12px 16px; }
+    .nav-brand img { height: 32px; max-width: calc(100vw - 126px); object-fit: contain; }
+    .nav-links { display: none; }
+    .mobile-nav { display: block; }
+    .mobile-nav summary {
+        min-height: 44px; padding: 10px 14px; border: 1px solid rgba(56,189,248,0.4);
+        border-radius: 10px; color: #fff; font-weight: 600; cursor: pointer;
+    }
+    .mobile-nav-panel {
+        position: absolute; top: 100%; left: 0; right: 0;
+        max-height: calc(100dvh - 76px); overflow-y: auto; padding: 16px;
+        background: #0a2247; border-bottom: 1px solid rgba(56,189,248,0.25);
+        box-shadow: 0 18px 24px rgba(0,0,0,0.25);
+    }
+    .mobile-nav-panel > a {
+        display: flex; align-items: center; min-height: 44px; padding: 10px 12px;
+        color: #e4e4e7; text-decoration: none; border-radius: 8px;
+    }
+    .mobile-nav-panel a:hover { background: rgba(14,165,233,0.12); }
+    .mobile-nav-languages { display: flex; gap: 12px; padding: 8px 0; }
+    .mobile-nav-languages a {
+        display: inline-flex; align-items: center; justify-content: center;
+        min-width: 52px; min-height: 44px; color: #e4e4e7; text-decoration: none;
+        border: 1px solid var(--border); border-radius: 8px;
+    }
+    section[id] { scroll-margin-top: 84px; }
+}
+</style>
 <style id="pricing-state-style">
 #pricing:not([data-pricing-state="ready"]) > .section-inner{display:none!important}
 #pricing[data-pricing-state="ready"] > .pricing-status{display:none}
@@ -695,6 +738,21 @@
             </div>
             <a href="https://clientrelay.tech/app/?lang=se" class="nav-cta" data-i18n="nav_cta">Dashboard →</a>
         </div>
+
+        <details class="mobile-nav">
+            <summary data-i18n="nav_menu">Meny</summary>
+            <div class="mobile-nav-panel">
+                <a href="#how-it-works" data-i18n="nav_how">Så fungerar det</a>
+                <a href="#features" data-i18n="nav_features">Funktioner</a>
+                <a href="#pricing" data-i18n="nav_pricing">Priser</a>
+                <div class="mobile-nav-languages" role="group" aria-label="Språk">
+                    <a href="https://clientrelay.tech/?lang=en" lang="en" data-lang-option="en">EN</a>
+                    <a href="https://clientrelay.no/?lang=no" lang="nb" data-lang-option="no">NO</a>
+                    <a href="https://clientrelay.se/?lang=se" lang="sv" data-lang-option="se" aria-current="page">SE</a>
+                </div>
+                <a href="https://clientrelay.tech/app/?lang=se" class="nav-cta" data-i18n="nav_cta">Dashboard →</a>
+            </div>
+        </details>
     </nav>
 
     <!-- Hero -->
@@ -705,8 +763,8 @@
         <div class="hero-inner">
             <div class="hero-layout">
                 <div class="hero-copy">
-                    <h1 data-i18n="hero_title">Build, manage, or resell AI chatbots from one hub.</h1>
-                    <p class="hero-sub" data-i18n="hero_sub">Launch AI chatbots for your clients without building the platform yourself. Create a client, add their website, test the answers, and publish a branded chatbot with lead capture, analytics, and a simple embed code.</p>
+                    <h1 data-i18n="hero_title">AI assistants powered by company knowledge, managed from one hub.</h1>
+                    <p class="hero-sub" data-i18n="hero_sub">Build, manage, or resell assistants for clients, campaigns, or your own business. Add a website, test the answers, and publish a branded assistant that guides visitors, captures leads, and shows you what people need.</p>
                     <div class="hero-actions">
                         <a href="https://clientrelay.tech/app/signup/?lang=se" class="btn-primary" data-i18n="hero_cta">Start free →</a>
                         <a href="#how-it-works" class="btn-ghost" data-i18n="hero_ghost">See how it works</a>
@@ -898,100 +956,14 @@
     </section>
 
     <!-- Pricing -->
-    <section id="pricing" data-pricing-state="loading" aria-busy="true">
-        <div class="pricing-status" role="status" aria-live="polite">Loading current pricing…</div>
-        <div class="section-inner">
-            <span class="section-label" data-i18n="price_label">Simple pricing</span>
-            <h2 data-i18n="price_title">Scale at your pace</h2>
-            <p class="section-sub" data-i18n="price_sub">Choose a plan based on how many active clients you need. Credits are included in every plan. No surprises.</p>
-            <div class="pricing-grid" style="grid-template-columns:repeat(5,1fr)">
-                <div class="price-card" data-tier="free">
-                    <div class="price-tier">Free</div>
-                    <div class="price-amount" data-i18n="p0_price">0 <span>EUR / month</span></div>
-                    <p class="price-desc" data-i18n="p0_desc">Try it out. No credit card needed. Create your hub and deploy your first chatbot today.</p>
-                    <ul class="price-features">
-                        <li data-i18n="p0_f1">2 active clients</li>
-                        <li data-i18n="p0_f2">50 credits / month</li>
-                        <li data-i18n="p_model_fast">Fast AI model</li>
-                        <li data-i18n="p_team">Team member access</li>
-                        <li data-i18n="p_leads">Lead capture</li>
-                        <li data-i18n="p0_inactive" style="font-size:0.78rem;color:#6b7280;border-top-color:transparent">Inactive bots removed after 14 days</li>
-                    </ul>
-                </div>
-                <div class="price-card" data-tier="starter">
-                    <div class="price-tier">Starter</div>
-                    <div class="price-amount" data-i18n="p1_price">67 <span>EUR / month</span></div>
-                    <p class="price-desc" data-i18n="p_starter_desc">For solo freelancers getting their first clients onboard.</p>
-                    <ul class="price-features">
-                        <li data-i18n="p_starter_f1">Up to 3 active clients</li>
-                        <li data-i18n="p_starter_msgs">1,000 credits / month</li>
-                        <li data-i18n="p_model_fast">Fast AI model</li>
-                        <li data-i18n="p_team">Team member access</li>
-                        <li data-i18n="p_leads">Lead capture</li>
-                        <li data-i18n="p_human_assist">Human Assist - live handoff</li>
-                    </ul>
-                </div>
-                <div class="price-card featured" data-tier="studio">
-                    <div class="price-tag" data-i18n="p_popular">Recommended</div>
-                    <div class="price-tier">Studio</div>
-                    <div class="price-amount" data-i18n="p2_price">179 <span>EUR / month</span></div>
-                    <p class="price-desc" data-i18n="p_studio_desc">For small teams managing a growing client base.</p>
-                    <ul class="price-features">
-                        <li data-i18n="p_studio_f1">Up to 7 active clients</li>
-                        <li data-i18n="p_studio_msgs">3,000 credits / month</li>
-                        <li data-i18n="p_model_adv">Advanced AI models</li>
-                        <li data-i18n="p_team">Team member access</li>
-                        <li data-i18n="p_brand">Custom branding per client</li>
-                        <li data-i18n="p_leads">Lead capture</li>
-                        <li data-i18n="p_analytics">Chat analytics</li>
-                        <li data-i18n="p_human_assist">Human Assist - live handoff</li>
-                    </ul>
-                </div>
-                <div class="price-card" data-tier="agency">
-                    <div class="price-tier">Agency</div>
-                    <div class="price-amount" data-i18n="p3_price">399 <span>EUR / month</span></div>
-                    <p class="price-desc" data-i18n="p_agency_desc">For agencies running a real client roster.</p>
-                    <ul class="price-features">
-                        <li data-i18n="p_agency_f1">Up to 15 active clients</li>
-                        <li data-i18n="p_agency_msgs">7,000 credits / month</li>
-                        <li data-i18n="p_model_adv">Advanced AI models</li>
-                        <li data-i18n="p_team">Team member access</li>
-                        <li data-i18n="p_leads">Lead capture</li>
-                        <li data-i18n="p_brand">Custom branding per client</li>
-                        <li data-i18n="p_human_assist">Human Assist - live handoff</li>
-                    </ul>
-                </div>
-                <div class="price-card" data-tier="scale">
-                    <div class="price-tier">Scale</div>
-                    <div class="price-amount" data-i18n="p4_price">899 <span>EUR / month</span></div>
-                    <p class="price-desc" data-i18n="p3_desc">For large operations growing a bigger client portfolio.</p>
-                    <ul class="price-features">
-                        <li data-i18n="p3_f1">Up to 30 active clients</li>
-                        <li data-i18n="p_scale_msgs">15,000 credits / month</li>
-                        <li data-i18n="p_model_adv">Advanced AI models</li>
-                        <li data-i18n="p_team">Team member access</li>
-                        <li data-i18n="p_leads">Lead capture</li>
-                        <li data-i18n="p_brand">Custom branding per client</li>
-                        <li data-i18n="p_human_assist">Human Assist - live handoff</li>
-                    </ul>
-                </div>
-            </div>
-            <p style="font-size:0.75rem;color:#4b5563;margin:0.6rem auto 0;text-align:center;font-style:italic;line-height:1.5" data-i18n="price_credit_note">New: ClientRelay now offers GPT-5.6 Luna and GPT-5.6 Terra.</p>
-
-            <div class="dogfood">
-                <h3 data-i18n="dog_title">This page runs on ClientRelay</h3>
-                <p data-i18n="dog_desc">The chatbot in the corner? That's a real ClientRelay client. Same platform your clients would use. One hub, many bots, each with its own brain.</p>
-                <div class="dogfood-labels">
-                    <span class="dogfood-label" data-i18n="dog_l1">Product bot - this page</span>
-                    <span class="dogfood-label" data-i18n="dog_l2">One hub, multiple clients</span>
-                </div>
-            </div>
-        </div>
+    <section id="pricing" data-pricing-state="loading">
+        <div class="pricing-status" role="status" aria-live="polite" hidden>Hämtar aktuella priser…</div>
+        <noscript><p class="pricing-status">Aktivera JavaScript för att hämta aktuella priser, eller kontakta oss för hjälp. <a href="mailto:contact@clientrelay.tech">contact@clientrelay.tech</a></p></noscript>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 ClientRelay &middot; <a href="https://clientrelay.tech/app/">Dashboard</a> &middot; <a href="https://clientrelay.tech/terms.html">Terms</a> &middot; <a href="https://clientrelay.tech/privacy.html">Privacy</a></p>
+        <p>&copy; 2026 ClientRelay &middot; <a href="https://clientrelay.tech/app/">Dashboard</a> &middot; <a href="https://clientrelay.tech/terms.html">Terms</a> &middot; <a href="https://clientrelay.tech/privacy.html">Privacy</a> &middot; <a href="mailto:contact@clientrelay.tech" data-i18n="footer_contact">Kontakt</a></p>
     </footer>
 
     <!-- ClientRelay Swedish Product Bot -->
@@ -1087,7 +1059,7 @@
     const L = {
       no: {
         hero_question_top:'Tilbyr dere gratis retur?', hero_question_bottom:'Hvilke produkter anbefaler dere?',
-        nav_how:'Slik fungerer det', nav_features:'Funksjoner', nav_pricing:'Priser', nav_cta:'Dashboard →',
+        nav_menu:'Meny', footer_contact:'Kontakt', nav_how:'Slik fungerer det', nav_features:'Funksjoner', nav_pricing:'Priser', nav_cta:'Dashboard →',
         hero_badge:'Nå i tidlig tilgang', hero_title:'Bygg, administrer eller videreselg AI-chatboter fra én hub.',
         hero_sub:'Lanser AI-chatboter for kundene dine uten å bygge plattformen selv. Opprett en kunde, legg inn nettsiden, test svarene og publiser en merkevaretilpasset chatbot med lead capture, statistikk og enkel embed-kode.',
         hero_cta:'Start gratis →', hero_ghost:'Se hvordan det fungerer',
@@ -1110,29 +1082,15 @@
         f7_t:'AI-markedsføringskonsulent - inkludert', f7_d:'Kundens chatbot kjenner allerede virksomheten. Den gir SEO-råd, innholdsforslag og markedsføringstips - uten ekstra kostnad.',
         f8_t:'AI-promptekonsulent - inkludert', f8_d:'Usikker på hvordan du setter opp en chatbot-persona? AI-en skriver sin egen systemprompt. Beskriv virksomheten - resten ordner den selv.',
         f9_t:'Human Assist - live overlevering', f9_d:'Når AI-en ikke kan hjelpe, trykker besøkende én knapp og kobles til en ekte person. Operatører håndterer live-chatter fra en mobilvennlig app - ingen ekstra programvare nødvendig.',
-        price_label:'Enkel prising', price_title:'Skaler n\u00e5r du er klar', price_sub:'Velg en plan etter hvor mange aktive klienter du trenger. Kreditter er inkludert i alle planer. Ingen overraskelser.',
-        p_starter_desc:'For frilansere som får sine første klienter ombord.',
-        p_studio_desc:'For små team som administrerer en voksende klientbase.',
-        p_agency_desc:'For byråer med en ekte klientportefølje.',
-        p3_desc:'For større operasjoner som bygger et bredt klientnettverk.',
-        p_starter_f1:'Opptil 3 aktive klienter', p_studio_f1:'Opptil 7 aktive klienter', p_agency_f1:'Opptil 15 aktive klienter',
-        p_starter_msgs:'1 000 kreditter / mnd', p_studio_msgs:'3 000 kreditter / mnd', p_agency_msgs:'7 000 kreditter / mnd', p_scale_msgs:'15 000 kreditter / mnd',
-        p3_f1:'Opptil 30 aktive klienter',
-        p3_f2:'Premium AI-modeller', p_model_fast:'Rask AI-modell', p_model_adv:'Avanserte AI-modeller', p_brand:'Tilpasset merkevare per klient', p_leads:'Leadgenerering',
-        p_analytics:'Chatanalyse', p_analytics_leads:'Chatanalyse og leads', p_team:'Teammedlemstilgang', p_popular:'Anbefalt', p_human_assist:'Human Assist - live overlevering',
-        price_credit_note:'Nytt: ClientRelay tilbyr n\u00e5 GPT-5.6 Luna og GPT-5.6 Terra.',
         dog_title:'Denne siden kjører på ClientRelay',
         dog_desc:'Chatboten i hjørnet er en ekte ClientRelay-klient. Dette er samme plattform som kundene dine kan bruke: én hub, mange chatboter, hver med sin egen kunnskap.',
         dog_l1:'Produktbot for denne siden', dog_l2:'Én hub, flere klienter',
         dog_live_intro:'Se den live hos en ekte kunde:', dog_live_link:'Spektrum Profil AS — gosh-spektrum.no',
-        p0_desc:'Prøv det ut. Ingen kredittkort nødvendig. Opprett hubben din og sett opp din første chatbot i dag.',
-        p0_f1:'2 aktive klienter', p0_f2:'50 kreditter / mnd', p0_inactive:'Inaktive boter fjernes etter 14 dager',
-        p0_price:'0 <span>NOK / mnd</span>', p1_price:'750 <span>NOK / mnd</span>', p2_price:'1 990 <span>NOK / mnd</span>', p3_price:'4 490 <span>NOK / mnd</span>', p4_price:'9 990 <span>NOK / mnd</span>',
         demo_label:'Se det i aksjon', demo_title:'Fra null til live chatbot på 2 minutter', demo_sub:'Se en ekte oppsettsøkt fra start til slutt. Ingen redigering, ingen triks - bare selve produktet.',
         showcase_label:'Live hos en ekte kunde', showcase_title:'Se den i produksjon', showcase_desc:'Spektrum Profil AS bruker en ClientRelay-chatbot for å hjelpe besøkende med produktkatalogen, svare på spørsmål om trykk og gravering, og veilede kjøpsbeslutninger — 24/7, på norsk.', showcase_stat:'Etter 2 minutter var denne klar til å svare på spørsmål fra 29 000 sider.', showcase_cta:'Besøk Spektrum Profil AS — gosh-spektrum.no',
         showcase_nacka_desc:'Nacka Guiden er et svensk eksempel som kjører på askmeabout.online/nacka.', showcase_nacka_cta:'Besøk Nacka Guiden — askmeabout.online/nacka',
         val_title:'Hvordan Spektrum kan skape verdi med ClientRelay', val_intro1:'Når en nettside skal skape henvendelser, er det ofte små spørsmål som stopper besøkende: «Hva koster det?», «Hvordan bestiller jeg?», «Passer dette for meg?», «Hva er neste steg?»', val_intro2:'ClientRelay lar Spektrum tilby kundene AI-assistenter som svarer på vanlige spørsmål, bruker innhold fra kundens egen nettside og hjelper besøkende videre til kontakt, booking eller kjøp.', val_intro3:'Samtidig får Spektrum og kunden innsikt i hva folk faktisk spør om. Det gir et praktisk grunnlag for å forbedre tekst, struktur, tilbud og CTA-er over tid.', val_b1:'Bedre utnyttelse av eksisterende trafikk', val_b2:'Raskere svar på vanlige spørsmål', val_b3:'Guidet vei mot kontakt, booking eller kjøp', val_b4:'Innsikt i hvilke spørsmål kundene faktisk stiller', val_b5:'Mindre manuelt arbeid med repeterende henvendelser', val_b6:'Én hub for å administrere flere kundeboter',
-        reseller_label:'Bygg en bedrift', reseller_title:'Gjør AI-chatboter til løpende inntekter', reseller_sub:'Du bare setter opp chatboter \u2014 du selger dem. ClientRelay gir deg verktøyene til å bygge en ekte AI-tjenestebedrift.',
+        reseller_label:'Bygg en bedrift', reseller_title:'Gjør AI-chatboter til løpende inntekter', reseller_sub:'Du setter ikke bare opp chatboter \u2014 du selger dem. ClientRelay gir deg verktøyene til å bygge en ekte AI-tjenestebedrift.',
         r1_t:'Sett dine egne priser', r1_d:'Definer egne prisnivåer på promosiden din. Du bestemmer hva du tar betalt \u2014 vi håndterer plattformen.',
         r2_t:'Din egen promoside', r2_d:'Hver hub får en merkevaretilpasset promoside med din tagline, prisnivåer og en direkte registreringslenke. Del den med leads \u2014 de kommer til deg.',
         r3_t:'Inviter og onboard kunder', r3_d:'Send invitasjonslenker, administrer ventende registreringer og onboard kunder med sine egne merkevare-chatboter \u2014 alt fra din hub.',
@@ -1141,9 +1099,9 @@
       },
       se: {
         hero_question_top:'Erbjuder ni fria returer?', hero_question_bottom:'Vilka produkter rekommenderar ni?',
-        nav_how:'Så fungerar det', nav_features:'Funktioner', nav_pricing:'Priser', nav_cta:'Dashboard →',
-        hero_badge:'Nu i tidig åtkomst', hero_title:'Bygg, hantera eller sälj vidare AI-chatbotar från en hubb.',
-        hero_sub:'Lansera AI-chattbotar för dina kunder utan att bygga plattformen själv. Skapa en kund, lägg in webbplatsen, testa svaren och publicera en varumärkesanpassad chattbot med lead capture, statistik och enkel embed-kod.',
+        nav_menu:'Meny', footer_contact:'Kontakt', nav_how:'Så fungerar det', nav_features:'Funktioner', nav_pricing:'Priser', nav_cta:'Dashboard →',
+        hero_badge:'Nu i tidig åtkomst', hero_title:'AI-assistenter baserade på verksamhetens kunskap, samlade i en hubb.',
+        hero_sub:'Bygg, hantera eller sälj vidare assistenter för kunder, kampanjer eller din egen verksamhet. Lägg in en webbplats, testa svaren och publicera en varumärkesanpassad assistent som vägleder besökare, samlar in leads och visar dig vad människor behöver.',
         hero_cta:'Starta gratis →', hero_ghost:'Se hur det fungerar',
         hero_client_link:'Behöver du bara en fristående chatbot? Kom igång genom vår partner Spektrum →',
         tagline:'Snabb att starta. Smartare med användning. Snabbare över tid.',
@@ -1164,24 +1122,10 @@
         f7_t:'AI-marknadsföringskonsult - inkluderad', f7_d:'Din klients chatbot känner redan verksamheten. Den ger SEO-råd, innehållsförslag och marknadsföringstips - utan extra kostnad.',
         f8_t:'AI-promptkonsult - inkluderad', f8_d:'Osäker på hur du sätter upp en chatbot-persona? AI:n skriver sin egen systemprompt. Beskriv verksamheten - resten sköter den själv.',
         f9_t:'Human Assist - live överlämning', f9_d:'När AI:n inte kan hjälpa trycker besökare på en knapp och kopplas till en riktig person. Operatörer hanterar live-chattar från en mobilvennlig app - ingen extra programvara behövs.',
-        price_label:'Enkel prissättning', price_title:'Skala i din takt', price_sub:'Välj en plan efter hur många aktiva klienter du behöver. Krediter ingår i alla planer. Inga överraskningar.',
-        p_starter_desc:'För frilansare som tar sina första klienter ombord.',
-        p_studio_desc:'För små team som hanterar en växande klientbas.',
-        p_agency_desc:'För byråer med en riktig klientportfölj.',
-        p3_desc:'För större verksamheter som bygger ett brett klientnätverk.',
-        p_starter_f1:'Upp till 3 aktiva klienter', p_studio_f1:'Upp till 7 aktiva klienter', p_agency_f1:'Upp till 15 aktiva klienter',
-        p_starter_msgs:'1 000 krediter / mån', p_studio_msgs:'3 000 krediter / mån', p_agency_msgs:'7 000 krediter / mån', p_scale_msgs:'15 000 krediter / mån',
-        p3_f1:'Upp till 30 aktiva klienter',
-        p3_f2:'Premium AI-modeller', p_model_fast:'Snabb AI-modell', p_model_adv:'Avancerade AI-modeller', p_brand:'Anpassat varumärke per klient', p_leads:'Leadinsamling',
-        p_analytics:'Chattanalys', p_analytics_leads:'Chattanalys och leads', p_team:'Teammedlemsåtkomst', p_popular:'Rekommenderad', p_human_assist:'Human Assist - live överlämning',
-        price_credit_note:'Nytt: ClientRelay erbjuder nu GPT-5.6 Luna och GPT-5.6 Terra.',
         dog_title:'Denna sida körs på ClientRelay',
         dog_desc:'Chatboten i hörnet? Det är en riktig ClientRelay-klient. Samma plattform som dina kunder skulle använda. En hubb, många botar, var och en med sin egen hjärna.',
         dog_l1:'Produktbot - denna sida', dog_l2:'En hubb, flera klienter',
         dog_live_intro:'Se den live hos en riktig kund:', dog_live_link:'Spektrum Profil AS — gosh-spektrum.no',
-        p0_desc:'Testa det. Inget kreditkort behövs. Skapa din hubb och sätt upp din första chatbot idag.',
-        p0_f1:'2 aktiva klienter', p0_f2:'50 krediter / mån', p0_inactive:'Inaktiva botar tas bort efter 14 dagar',
-        p0_price:'0 <span>SEK / mån</span>', p1_price:'750 <span>SEK / mån</span>', p2_price:'1 990 <span>SEK / mån</span>', p3_price:'4 490 <span>SEK / mån</span>', p4_price:'9 990 <span>SEK / mån</span>',
         demo_label:'Se det i aktion', demo_title:'Från noll till live chatbot på 2 minuter', demo_sub:'Se en riktig installationssession från start till slut. Ingen redigering, inga tricks - bara själva produkten.',
         showcase_label:'Live hos en riktig kund', showcase_title:'Se den i produktion', showcase_desc:'Spektrum Profil AS använder en ClientRelay-chatbot för att hjälpa besökare navigera produktkatalogen, svara på frågor om tryckmetoder och vägleda köpbeslut — 24/7, på norska.', showcase_stat:'Efter 2 minuter var denna redo att svara på frågor från 29 000 sidor.', showcase_cta:'Besök Spektrum Profil AS — gosh-spektrum.no',
         showcase_nacka_desc:'Nacka Guiden är ett svenskt exempel som körs på askmeabout.online/nacka.', showcase_nacka_cta:'Besök Nacka Guiden — askmeabout.online/nacka',
@@ -1196,11 +1140,11 @@
     };
     // English is the HTML default - no dict needed
     const saved = {}; // cache EN values from DOM
-    let _pricingTiers = null; // cached tier data from DB
     function renderPricingStatus(lang) {
       const root = document.getElementById('pricing');
       const status = root.querySelector('.pricing-status');
       if (!status) return;
+      status.hidden = false;
       const words = {
         en: { loading:'Loading current pricing…', unavailable:'Current pricing is temporarily unavailable.', dashboard:'Open the dashboard' },
         no: { loading:'Laster gjeldende priser…', unavailable:'Gjeldende priser er midlertidig utilgjengelige.', dashboard:'Åpne dashbordet' },
@@ -1220,43 +1164,12 @@
     }
     function applyDynamicPricing(lang) {
       renderPricingStatus(lang);
-      if (window.clientRelaySlotCatalog?.enabled) { window.renderClientRelaySlotPricing?.(lang); return; }
-      if (!_pricingTiers) return;
-      const currKey = lang === 'no' ? 'nok' : lang === 'se' ? 'sek' : 'eur';
-      const currLabel = lang === 'no' ? 'NOK' : lang === 'se' ? 'SEK' : 'EUR';
-      const perMonth = lang === 'no' ? 'mnd' : lang === 'se' ? 'mån' : 'month';
-      const creditsLabel = lang === 'no' ? 'kreditter' : lang === 'se' ? 'krediter' : 'credits';
-      const upTo = lang === 'no' ? 'Opptil' : lang === 'se' ? 'Upp till' : 'Up to';
-      const clientsLabel = lang === 'no' ? 'aktive klienter' : lang === 'se' ? 'aktiva klienter' : 'active clients';
-      const clientLabel = (n) => n === 1
-        ? (lang === 'no' ? 'aktiv klient' : lang === 'se' ? 'aktiv klient' : 'active client')
-        : clientsLabel;
-      const fmt = (n) => n >= 1000 ? n.toLocaleString('en').replace(/,/g, ' ') : String(n);
-      _pricingTiers.forEach(t => {
-        const card = document.querySelector(`.price-card[data-tier="${t.tier}"]`);
-        if (!card) return;
-        const priceEl = card.querySelector('.price-amount');
-        if (priceEl) {
-          const price = t['price_' + currKey] || 0;
-          priceEl.innerHTML = `${fmt(price)} <span>${currLabel} / ${perMonth}</span>`;
-        }
-        const lis = card.querySelectorAll('.price-features li');
-        if (lis[0] && t.max_clients) {
-          if (t.tier === 'free') {
-            lis[0].textContent = `${t.max_clients} ${clientLabel(t.max_clients)}`;
-          } else {
-            lis[0].textContent = `${upTo} ${t.max_clients} ${clientsLabel}`;
-          }
-        }
-        if (lis[1] && t.monthly_messages) {
-          lis[1].textContent = `${fmt(t.monthly_messages)} ${creditsLabel} / ${perMonth}`;
-        }
-      });
+      if (window.clientRelaySlotCatalog?.enabled) window.renderClientRelaySlotPricing?.(lang);
     }
     function setLang(lang) {
       window.currentLandingLang = lang;
       localStorage.setItem('cr_landing_lang', lang);
-      document.documentElement.lang = lang === 'no' ? 'nb' : lang;
+      document.documentElement.lang = lang === 'no' ? 'nb' : lang === 'se' ? 'sv' : 'en';
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const k = el.dataset.i18n;
         if (!saved[k]) saved[k] = el.innerHTML;
@@ -1272,6 +1185,7 @@
     // ── Fetch verified current pricing; never expose stale offers on failure ──
     (async function() {
       const root = document.getElementById('pricing');
+      root.setAttribute('aria-busy', 'true');
       try {
         const SB = 'https://api.clientrelay.tech';
         const AK = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5d2NueWltbGhpd2JicXF6dm9lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU1NjIyOTYsImV4cCI6MjA4MTEzODI5Nn0.rVPlSGwbKz-HyODCz3f2tFW-9sm1X3zRVuWoDuwsM24';
@@ -1285,20 +1199,10 @@
         };
         const catalog = await readPricing('get_public_slot_pricing');
         if (catalog?.version !== 'slots_v1' || typeof catalog.enabled !== 'boolean') throw new Error('Invalid catalog');
-        if (catalog.enabled) {
-          const { validatePublicSlotPricing, mountSlotPricing } = await import('./assets/slot-pricing.js?v=__BUILD_VERSION__');
-          window.clientRelaySlotCatalog = validatePublicSlotPricing(catalog);
-          window.renderClientRelaySlotPricing = lang => mountSlotPricing(root, catalog, lang);
-        } else {
-          const tiers = await readPricing('get_public_pricing');
-          const valid = Array.isArray(tiers) && ['free','starter','studio','agency','scale'].every(tier => {
-            const rows = tiers.filter(row => row?.tier === tier);
-            return rows.length === 1 && ['price_nok','price_sek','price_eur','max_clients','monthly_messages'].every(key =>
-              typeof rows[0][key] === 'number' && Number.isFinite(rows[0][key]) && rows[0][key] >= 0);
-          });
-          if (!valid) throw new Error('Invalid legacy pricing');
-          _pricingTiers = tiers;
-        }
+        if (!catalog.enabled) throw new Error('Slot pricing unavailable');
+        const { validatePublicSlotPricing, mountSlotPricing } = await import('./assets/slot-pricing.js?v=website-qa-20260919');
+        window.clientRelaySlotCatalog = validatePublicSlotPricing(catalog);
+        window.renderClientRelaySlotPricing = lang => mountSlotPricing(root, catalog, lang);
         applyDynamicPricing(window.currentLandingLang);
         root.dataset.pricingState = 'ready';
         root.setAttribute('aria-busy', 'false');
@@ -1427,6 +1331,21 @@
         body:JSON.stringify({page:location.pathname,referrer:r,lang:l,device:m})
       }).catch(function(){});
     })();
+    </script>
+
+    <script>
+    // Native disclosure remains usable when JavaScript is unavailable.
+    document.querySelectorAll('.mobile-nav').forEach(menu => {
+      menu.addEventListener('click', event => {
+        if (event.target.closest('a')) menu.open = false;
+      });
+      menu.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          menu.open = false;
+          menu.querySelector('summary').focus();
+        }
+      });
+    });
     </script>
 </body>
 </html>

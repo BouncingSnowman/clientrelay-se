@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="2000" viewBox="0 0 2800 2000">
+  <defs>
+    <radialGradient id="glow" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(252 350) scale(974.1 551.5)">
+      <stop stop-color="#0ea5e9" stop-opacity="0.075"/>
+      <stop offset="1" stop-color="#0ea5e9" stop-opacity="0"/>
+    </radialGradient>
+    <g id="tile">
+      <rect width="1400" height="1000" fill="url(#glow)"/>
+    </g>
+  </defs>
+  <!-- Reflect alternate columns and rows so inner and repeating edges match. -->
+  <use href="#tile"/>
+  <use href="#tile" transform="translate(2800 0) scale(-1 1)"/>
+  <use href="#tile" transform="translate(0 2000) scale(1 -1)"/>
+  <use href="#tile" transform="translate(2800 2000) scale(-1 -1)"/>
+</svg>
