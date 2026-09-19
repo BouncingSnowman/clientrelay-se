@@ -1200,7 +1200,7 @@ footer p { color: var(--text-muted); line-height: 2; }
         const catalog = await readPricing('get_public_slot_pricing');
         if (catalog?.version !== 'slots_v1' || typeof catalog.enabled !== 'boolean') throw new Error('Invalid catalog');
         if (!catalog.enabled) throw new Error('Slot pricing unavailable');
-        const { validatePublicSlotPricing, mountSlotPricing } = await import('./assets/slot-pricing.js?v=website-qa-20260919');
+        const { validatePublicSlotPricing, mountSlotPricing } = await import('./assets/slot-pricing.js?v=credit-policy-20260919');
         window.clientRelaySlotCatalog = validatePublicSlotPricing(catalog);
         window.renderClientRelaySlotPricing = lang => mountSlotPricing(root, catalog, lang);
         applyDynamicPricing(window.currentLandingLang);
