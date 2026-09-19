@@ -6,6 +6,23 @@ export const slotWords = {
  se: { title:'Väx en klient i taget', slots:'Klientplatser', slot:'klientplats', credits:'krediter', month:'månad', exVat:'exklusive moms', active:'aktivt', earned:'intjänat', paused:'pausat', free:'Gratis test', pool:'Gemensamma krediter per kalendermånad (UTC). Oanvända krediter sparas inte.', freeNote:'Gratis är ett separat test: 2 klientplatser och 50 krediter per månad.', included:'Varje betald plats lägger till {credits} krediter i den gemensamma månadspotten. Betalda platser ersätter gratisplatserna.', creditHelp:'1 Luna-kredit = 1 AI-svar. Ett samtal kan innehålla flera svar. Terra använder {terraCredits} krediter per svar. AI-svar pausas om tillgängliga krediter inte täcker nästa svar.', answerExample:'Med Luna räcker dessa krediter till upp till {credits} AI-svar per hel månad.', rewards:'Nivåer och förmåner', starter:'Grundfunktioner och 3 000 KB kunskapskapacitet per klient.', studio:'Allt i Starter + avancerade modeller, återförsäljarmärkning och 5 000 KB kunskapskapacitet per klient.', agency:'Allt i Studio + 10 000 KB kunskapskapacitet per klient.', scale:'Allt i Agency + 20 000 KB kunskapskapacitet per klient.', knowledgeCapacity:'Kunskapskapacitet per assistent', knowledgeHelp:'Kunskapskapacitet är mängden sparad webbplatstext som assistenten kan använda. KB anger storleken; detta är separat från månatliga svarskrediter.', baseline:'Teamåtkomst, widgetanpassning och Human Assist ingår.', earning:'Förmånerna aktiveras efter betalning. En betald faktura för en hel kalendermånad ger permanent intjänad nivå. Intjänade förmåner behålls med minst en betald plats och pausas på Gratis.', branding:'Återförsäljarmärkning använder befintlig sidfot; ClientRelay-märkningen finns kvar.', calculator:'Partnerkalkylator', sell:'Ditt månadspris per klient (NOK, exklusive moms)', setup:'Engångspris för uppsättning per klient (NOK, exklusive moms)', revenue:'Månadsintäkt', fee:'Månatlig plattformskostnad', contribution:'Kvar per månad efter plattformskostnad', firstYear:'Första året, inklusive uppsättning', caution:'Före eget arbete, support och andra kostnader. Förutsätter alla klienter i 12 månader.', continue:'Börja gratis', slotHelp:'En plats ger kapacitet för en klientassistent. Lägg till och hantera dina klienter i dashboarden.', levelHelp:'Antalet betalda platser låser upp återförsäljarnivåer automatiskt; du behöver inte uppgradera en separat plan.', knowledge:'KB per klient' },
 };
 export function pricingWords(lang) { return slotWords[lang === 'sv' ? 'se' : lang === 'nb' ? 'no' : lang] || slotWords.en; }
+const guideWords = {
+ en: { answers:'Credits pay for AI answers', answerIntro:'Your clients share one monthly credit pool. Each AI answer uses credits; a conversation can contain several answers.', rate:'credits per answer', singleRate:'credit per answer', monthly:'Monthly credit rules', pause:'AI answers pause when the remaining credits cannot cover the next answer.', knowledge:'Knowledge holds website text', knowledgeIntro:'This is the saved text an assistant can use to answer questions. KB measures its size. It is separate from your monthly credits.', knowledgeLabel:'Website knowledge', perClient:'per client', starter:'Core features', studio:'Everything in Starter, plus:', agency:'Everything in Studio', scale:'Everything in Agency', advanced:'Advanced models', branding:'Reseller branding', levels:'More clients, more benefits', levelIntro:'Levels unlock automatically as you add paid client slots.', details:'When benefits activate and how you keep them' },
+ no: { answers:'Kreditter brukes til AI-svar', answerIntro:'Klientene dine deler én månedlig kredittpott. Hvert AI-svar bruker kreditter. En samtale kan inneholde flere svar.', rate:'kreditter per svar', singleRate:'kreditt per svar', monthly:'Slik fungerer månedlige kreditter', pause:'AI-svar pauses når det ikke er nok kreditter til neste svar.', knowledge:'Kunnskap er lagret nettstedtekst', knowledgeIntro:'Dette er teksten assistenten kan bruke for å svare på spørsmål. KB viser størrelsen. Kunnskap er separat fra de månedlige kredittene.', knowledgeLabel:'Nettstedkunnskap', perClient:'per klient', starter:'Grunnfunksjoner', studio:'Alt i Starter, pluss:', agency:'Alt i Studio', scale:'Alt i Agency', advanced:'Avanserte modeller', branding:'Forhandlerprofilering', levels:'Flere klienter, flere fordeler', levelIntro:'Nivåene låses opp automatisk når du legger til betalte klientplasser.', details:'Når fordelene aktiveres og hvordan du beholder dem' },
+ se: { answers:'Krediter används till AI-svar', answerIntro:'Dina klienter delar en månatlig kreditpott. Varje AI-svar använder krediter. Ett samtal kan innehålla flera svar.', rate:'krediter per svar', singleRate:'kredit per svar', monthly:'Så fungerar månatliga krediter', pause:'AI-svar pausas när det inte finns tillräckligt med krediter för nästa svar.', knowledge:'Kunskap är sparad webbplatstext', knowledgeIntro:'Det är texten assistenten kan använda för att svara på frågor. KB visar storleken. Kunskap är separat från de månatliga krediterna.', knowledgeLabel:'Webbplatskunskap', perClient:'per klient', starter:'Grundfunktioner', studio:'Allt i Starter, plus:', agency:'Allt i Studio', scale:'Allt i Agency', advanced:'Avancerade modeller', branding:'Återförsäljarmärkning', levels:'Fler klienter, fler förmåner', levelIntro:'Nivåerna låses upp automatiskt när du lägger till betalda klientplatser.', details:'När förmånerna aktiveras och hur du behåller dem' },
+};
+function pricingGuideWords(lang) { return guideWords[lang === 'sv' ? 'se' : lang === 'nb' ? 'no' : lang] || guideWords.en; }
+function knowledgeGuideHtml(lang) {
+ const g=pricingGuideWords(lang);
+ return `<section class="slot-guide-panel"><h3>${g.knowledge}</h3><p>${g.knowledgeIntro}</p></section>`;
+}
+function creditGuideHtml(config,lang) {
+ const g=pricingGuideWords(lang), w=pricingWords(lang);
+ const terra=config.credits_per_slot===2000?15:3;
+ return `<div class="slot-guide"><section class="slot-guide-panel"><h3>${g.answers}</h3><p>${g.answerIntro}</p>
+ <div class="slot-answer-rates"><p><span>Luna</span><strong>1</strong><small>${g.singleRate}</small></p><p><span>Terra</span><strong>${terra}</strong><small>${g.rate}</small></p></div>
+ <details class="slot-details"><summary>${g.monthly}</summary><p>${w.pool}</p><p>${g.pause}</p></details></section>${knowledgeGuideHtml(lang)}</div>`;
+}
 export function slotIncludedText(config, lang = 'en') {
  if (![400, 2000].includes(config?.credits_per_slot)) throw new Error('Unsupported credit catalog');
  return pricingWords(lang).included.replace('{credits}', config.credits_per_slot.toLocaleString(lang === 'se' ? 'sv-SE' : lang === 'no' ? 'nb-NO' : 'en-GB'));
@@ -39,9 +56,17 @@ export function estimateSlots(config, slots) {
  return { slots, amount:slots * config.unit_amount, credits:slots * config.credits_per_slot, level:level.level };
 }
 export function escapeSlot(value) { return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-export function levelsHtml(config, lang) {
- const w = pricingWords(lang);
- return `<h3>${w.rewards}</h3><p><strong>${w.knowledgeCapacity}</strong> ${w.knowledgeHelp}</p><div class="slot-levels">${config.levels.filter(row => row.min_slots > 0).map(row => `<section><h4>${escapeSlot(row.level[0].toUpperCase()+row.level.slice(1))} · ${row.min_slots}+ ${w.slots.toLowerCase()}</h4><p>${w[row.level]}</p></section>`).join('')}</div><p>${w.baseline}</p><p>${w.earning}</p><p><small>${w.branding}</small></p>`;
+export function levelsHtml(config, lang, showKnowledge = true) {
+ const w=pricingWords(lang), g=pricingGuideWords(lang);
+ const locale=lang==='se'||lang==='sv'?'sv-SE':lang==='no'||lang==='nb'?'nb-NO':'en-GB';
+ return `<div class="slot-benefits"><header class="slot-benefits-heading"><h3>${g.levels}</h3><p>${g.levelIntro}</p></header>
+ ${showKnowledge?`<div class="slot-knowledge-note">${knowledgeGuideHtml(lang)}</div>`:''}
+ <div class="slot-levels">${config.levels.filter(row=>row.min_slots>0).map(row=>`<section>
+ <h4>${escapeSlot(row.level[0].toUpperCase()+row.level.slice(1))}</h4><p class="slot-level-threshold">${row.min_slots}+ ${w.slots.toLowerCase()}</p>
+ <div class="slot-level-features"><p>${g[row.level]}</p>${row.level==='studio'?`<ul><li>${g.advanced}</li><li>${g.branding}</li></ul>`:''}</div>
+ <p class="slot-level-capacity"><span>${g.knowledgeLabel}</span><strong>${row.kb_limit_kb.toLocaleString(locale)}\u00a0KB</strong><small>${g.perClient}</small></p>
+ </section>`).join('')}</div><p class="slot-baseline">${w.baseline}</p>
+ <details class="slot-details slot-benefit-details"><summary>${g.details}</summary><p>${w.earning}</p><p>${w.branding}</p></details></div>`;
 }
 export function mountSlotCalculator(root, config, lang = 'en', initialSlots = 3) {
  validatePublicSlotPricing(config);
@@ -70,7 +95,9 @@ export function mountSlotCalculator(root, config, lang = 'en', initialSlots = 3)
 export function ensureSlotStyles() {
  if (document.querySelector('link[data-slot-styles]')) return;
  const link=document.createElement('link'); link.rel='stylesheet'; link.dataset.slotStyles='true';
- link.href=new URL('./slot-pricing.css?v=__BUILD_VERSION__',import.meta.url).href; document.head.append(link);
+ const stylesUrl=new URL('./slot-pricing.css',import.meta.url);
+ stylesUrl.search=new URL(import.meta.url).search;
+ link.href=stylesUrl.href; document.head.append(link);
 }
 
 export function mountSlotPricing(root, config, lang = 'en') {
@@ -81,7 +108,7 @@ export function mountSlotPricing(root, config, lang = 'en') {
  <section><h3>${nok(config.unit_amount,lang)} / ${w.slot} / ${w.month}</h3><p>${w.exVat}</p>
  <label>${w.slots}<input name="pricing-slots" type="number" min="1" max="10000" step="1" value="3"></label>
  <output aria-live="polite"></output><p data-slot-credits></p><p data-slot-answers></p><p>${slotIncludedText(config,lang)}</p><a href="https://clientrelay.tech/app/signup/?lang=${encodeURIComponent(lang)}">${w.continue}</a></section></div>
- <p>${slotCreditHelpText(config,lang)}</p><p>${w.pool}</p><p>${w.levelHelp}</p>${levelsHtml(config,lang)}</div>`;
+ ${creditGuideHtml(config,lang)}${levelsHtml(config,lang,false)}</div>`;
  const update=()=>{try {const slots=Number(root.querySelector('[name=pricing-slots]').value); const e=estimateSlots(config,slots); root.querySelector('output').textContent=`${nok(e.amount,lang)} / ${w.month} · ${w.exVat}`; root.querySelector('[data-slot-credits]').textContent=`${e.credits.toLocaleString(lang === 'se' ? 'sv-SE' : lang === 'no' ? 'nb-NO' : 'en-GB')} ${w.credits}/${w.month} · ${e.level[0].toUpperCase()+e.level.slice(1)}`; root.querySelector('[data-slot-answers]').textContent=slotAnswerExampleText(config,slots,lang);} catch {root.querySelector('output').textContent='—';root.querySelector('[data-slot-credits]').textContent='';root.querySelector('[data-slot-answers]').textContent='';}};
  root.oninput=update; update();
  // Replace all offer claims together, including structured data. Legacy
